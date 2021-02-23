@@ -1,0 +1,5 @@
+com\clean\architecture\tuto\core\exceptions\BusinessException.class
+com\clean\architecture\tuto\core\use\cases\personne\CreatePersonUseCase.class
+com\clean\architecture\tuto\core\exceptions\TechnicalException.class
+com\clean\architecture\tuto\core\ports\personne\RepositoryPerson.class
+com\clean\architecture\tuto\core\models\Person.class

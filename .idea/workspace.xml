@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1oq3usJ5O9JXzoya09wf923vAWA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/adapters/primaries" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.clean.architecture.tuto.core.use.cases.equipe" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.clean.architecture.tuto.core.exceptions" />
+      <recent name="com.clean.architecture.tuto.core.ports.personne" />
+      <recent name="com.clean.architecture.tuto.core.models" />
+      <recent name="com.clean.architecture.tuto.core.use.cases.personne" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\secondaries\repositorySQL\src\main\java" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\secondaries" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\primaries" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.cli.Application" />
+      <module name="ConsoleAdapter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in core" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateTeamUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.core.use.cases.equipe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases.equipe" />
+      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.equipe.CreateTeamUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.clean.architecture.tuto.core.use.cases in core" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.core.use.cases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="restAdapter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.clean.architecture.tuto.rest.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.com.clean.architecture.tuto.core.use.cases in core" />
+        <item itemvalue="JUnit.All in core" />
+        <item itemvalue="JUnit.CreateTeamUseCaseTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="" />
+      <created>1614000519118</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614000519118</updated>
+      <workItem from="1614000522102" duration="10268000" />
+      <workItem from="1614015458399" duration="342000" />
+      <workItem from="1614015813695" duration="2649000" />
+      <workItem from="1614069554709" duration="21022000" />
+      <workItem from="1614093568658" duration="2826000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="432" y="166" key="#Project_Structure" timestamp="1614094379149">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="166" key="#Project_Structure/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614094379149" />
+    <state x="566" y="173" key="#Test" timestamp="1614068175747">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="566" y="173" key="#Test/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614068175747" />
+    <state x="92" y="92" width="1496" height="826" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1614087694925">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="92" y="92" width="1496" height="826" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614087694925" />
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614094732642">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614094732642" />
+    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614080323965">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614080323965" />
+    <state width="426" height="466" key="DebuggerActiveHint" timestamp="1614095202774">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="426" height="466" key="DebuggerActiveHint/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095202774" />
+    <state x="619" y="262" key="FileChooserDialogImpl" timestamp="1614093909605">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="619" y="262" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614093909605" />
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1614095801610">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801610" />
+    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1614095801610">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801610" />
+    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1614095801610">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801610" />
+    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1614095801610">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801610" />
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.2.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.2.center" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.2.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.2.left" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.2.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state width="1637" height="336" key="GridCell.Tab.2.right" timestamp="1614095801449">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1637" height="336" key="GridCell.Tab.2.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614095801449" />
+    <state x="370" y="163" key="Maven.ArtifactSearchDialog" timestamp="1614015746977">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="370" y="163" key="Maven.ArtifactSearchDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614015746977" />
+    <state x="660" y="362" width="758" height="590" key="NewModule_or_Project.wizard" timestamp="1614015565129">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="660" y="362" width="758" height="590" key="NewModule_or_Project.wizard/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614015565129" />
+    <state x="173" y="94" width="1419" height="845" key="SettingsEditor" timestamp="1614093552779">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="173" y="94" width="1419" height="845" key="SettingsEditor/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614093552779" />
+    <state x="548" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1614093568547">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="548" y="332" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614093568547" />
+    <state x="570" y="267" width="540" height="482" key="extract.method.dialog" timestamp="1614007707902">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="570" y="267" width="540" height="482" key="extract.method.dialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614007707902" />
+    <state x="547" y="139" width="586" height="732" key="find.popup" timestamp="1614009536662">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="547" y="139" width="586" height="732" key="find.popup/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614009536662" />
+    <state x="387" y="220" width="1235" height="582" key="new project wizard" timestamp="1614093929400">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="387" y="220" width="1235" height="582" key="new project wizard/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614093929400" />
+    <state x="582" y="139" key="refactoring.ChangeSignatureDialog" timestamp="1614088784315">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="582" y="139" key="refactoring.ChangeSignatureDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614088784315" />
+    <state x="496" y="233" key="run.anything.popup" timestamp="1614087593231">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614087593231" />
+    <state x="503" y="217" key="search.everywhere.popup" timestamp="1614072358101">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="503" y="217" key="search.everywhere.popup/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614072358101" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/CreatePersonUseCase.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="list" language="JAVA" />
+      </configuration>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="repository.getAll()" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
