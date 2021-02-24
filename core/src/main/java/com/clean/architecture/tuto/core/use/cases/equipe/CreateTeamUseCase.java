@@ -5,6 +5,7 @@ import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.core.ports.equipe.RepositoryTeam;
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -24,12 +25,17 @@ public class CreateTeamUseCase {
         return repository.create(team);
     }
 
-    private void checkBusinessRules(Team team) throws BusinessException, TechnicalException {
+    private void checkBusinessRules(Team team) throws BusinessException, TechnicalException, UnknownHostException {
         List<String> errorsList = new ArrayList<>();
         if(Objects.isNull(team)) {
             throw new TechnicalException("Team is null");
         } else {
             testStringMandatory(errorsList, team.getName(), "nom", 20, 2);
+
+            if(StringUtils.isNotEmpty(team.getName()) && this.repository.existsByName(team.getName())) {
+                errorsList.add("Une équipe portant ce nom existe déjà");
+            }
+
             if(CollectionUtils.isEmpty(team.getList())) {
                 errorsList.add("Une équipe doit obligatoirement être lié à des personnes");
             } else {

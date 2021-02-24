@@ -1,5 +1,6 @@
 package com.clean.architecture.tuto.reposql.repositories;
 
+import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
 import com.mongodb.*;
@@ -8,6 +9,7 @@ import org.bson.types.ObjectId;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RepositoryPersonMongoDB implements RepositoryPerson {
 
@@ -43,18 +45,26 @@ public class RepositoryPersonMongoDB implements RepositoryPerson {
     }
 
     @Override
-    public Person display(Person personToDisplay) throws UnknownHostException {
+    public Optional<Person> findById(String id) throws UnknownHostException, BusinessException {
         MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
         DB database = mongoClient.getDB("local");
         DBCollection collection = database.getCollection("person");
         BasicDBObject query = new BasicDBObject();
-        query.put("_id", new ObjectId(personToDisplay.getId()));
+
+        //check is objectid is valid in mongodb
+        if(!ObjectId.isValid(id)) {
+            //bonne méthode ? à voir avec Yassine
+            throw new BusinessException("L'id n'est pas valide.");
+        }
+
+        query.put("_id", new ObjectId(id));
 
         DBObject value = collection.findOne(query);
-        return new Person(String.valueOf(value.get("_id")),
+
+        return Optional.of(new Person(String.valueOf(value.get("_id")),
                 String.valueOf(value.get("firstname")),
                 String.valueOf(value.get("lastname")),
-                Integer.parseInt(String.valueOf(value.get("age"))));
+                Integer.parseInt(String.valueOf(value.get("age")))));
     }
 
 

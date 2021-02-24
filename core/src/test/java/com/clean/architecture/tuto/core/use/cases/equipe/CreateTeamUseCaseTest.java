@@ -39,6 +39,18 @@ public class CreateTeamUseCaseTest {
         this.useCase = new CreateTeamUseCase(repository);
     }
 
+    private List<Person> getStubPersons() {
+        Person p1 = new Person("1", "Luca", "Stagiaire", 25);
+        Person p2 = new Person("2", "Abc", "Btagiaire", 25);
+        Person p3 = new Person("3", "Def", "Ctagiaire", 25);
+        Person p4 = new Person("4", "Ghi", "Dtagiaire", 25);
+        Person p5 = new Person("5", "Toto", "Stagiaire", 25);
+        Person p6 = new Person("6", "Tutu", "Stagiaire", 25);
+        Person p7 = new Person("7", "Titi", "Stagiaire", 25);
+        return Stream.of(p1, p2, p3, p4, p5, p6, p7)
+                .collect(Collectors.toList());
+    }
+
     @Test
     public void should_throw_business_exception_when_name_is_gt_20() {
         this.teamToCreate.setName("Olympique de Marseille");
@@ -132,27 +144,23 @@ public class CreateTeamUseCaseTest {
 
     @Test
     public void should_throw_business_exception_when_person_is_minor() {
-        List<Person> list = new ArrayList<>();
-        Person person = new Person("1", "Luca", "Debeir", 16);
-        for(int i = 0; i<7; i++) {
-            list.add(person);
-        }
+        List<Person> list = getStubPersons();
+        list.get(0).setAge(16);
         this.teamToCreate.setList(list);
         Assertions.assertThatCode(() -> {
             this.useCase.execute(teamToCreate);
         }).hasMessage("Une équipe ne peut être composée que de personnes majeures").isInstanceOf(BusinessException.class);
     }
 
-    private List<Person> getStubPersons() {
-        Person p1 = new Person("1", "Luca", "Stagiaire", 25);
-        Person p2 = new Person("2", "Abc", "Btagiaire", 25);
-        Person p3 = new Person("3", "Def", "Ctagiaire", 25);
-        Person p4 = new Person("4", "Ghi", "Dtagiaire", 25);
-        Person p5 = new Person("5", "Toto", "Stagiaire", 25);
-        Person p6 = new Person("6", "Tutu", "Stagiaire", 25);
-        Person p7 = new Person("7", "Titi", "Stagiaire", 25);
-        return Stream.of(p1, p2, p3, p4, p5, p6, p7)
-                .collect(Collectors.toList());
+    @Test
+    public void should_throw_business_exception_when_name_is_not_unique() throws UnknownHostException {
+
+        Mockito.when(this.repository.existsByName("OL")).thenReturn(true);
+
+        Team team = Team.builder().name("OL").list(getStubPersons()).build();
+        Assertions.assertThatCode(() -> {
+            this.useCase.execute(team);
+        }).hasMessage("Une équipe portant ce nom existe déjà").isInstanceOf(BusinessException.class);
     }
 
 }

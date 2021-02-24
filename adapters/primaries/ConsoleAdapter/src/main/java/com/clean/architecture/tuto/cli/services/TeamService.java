@@ -56,4 +56,20 @@ public class TeamService {
         }
     }
 
+    public void findAll() throws UnknownHostException {
+        System.out.println("-----------------------------------------------");
+        System.out.println("       AFFICHAGE DE TOUTES LES EQUIPES         ");
+        System.out.println("-----------------------------------------------");
+        List<Team> list = Config.getAllTeamUseCase().execute();
+        System.out.println("Identifiant | Nom de l'équipe");
+        for(Team t: list) {
+            System.out.println(t.getId() + " | " + t.getName());
+            System.out.println("Identifiant | Prenom | Nom | Age");
+            for(Person p: t.getList()) {
+                System.out.println(p.getId() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge());
+            }
+            System.out.println("-----------------------------------------------");
+        }
+    }
+
 }

@@ -6,6 +6,7 @@ import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RepositoryPersonSQL implements RepositoryPerson {
 
@@ -14,7 +15,7 @@ public class RepositoryPersonSQL implements RepositoryPerson {
         String SQL_GET_ID_INSERTING = "SELECT LAST_INSERT_ID()";
 
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/tuto", "root", "root");
+                "jdbc:mysql://127.0.0.1:3306/tuto?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
              PreparedStatement preparedStatement = conn.prepareStatement(SQL_INSERT)) {
 
             preparedStatement.setString(1, person.getLastName());
@@ -45,7 +46,7 @@ public class RepositoryPersonSQL implements RepositoryPerson {
     public List<Person> getAll() {
         List<Person> list = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/tuto?serverTimezone=UTC", "root", "root")) {
+                "jdbc:mysql://127.0.0.1:3306/tuto?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root")) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM person");
             while (rs.next()) {
@@ -64,20 +65,20 @@ public class RepositoryPersonSQL implements RepositoryPerson {
     }
 
     @Override
-    public Person display(Person personToDisplay) {
+    public Optional<Person> findById(String id) {
 
         String SQL_SELECT_PERSON = "SELECT * FROM person WHERE id = ?";
         Person p = null;
         
         try (Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://127.0.0.1:3306/tuto", "root", "root");
+                "jdbc:mysql://127.0.0.1:3306/tuto?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
              PreparedStatement preparedStatement = conn.prepareStatement(SQL_SELECT_PERSON)) {
 
-            preparedStatement.setString(1, personToDisplay.getId());
+            preparedStatement.setString(1, id);
 
             ResultSet rs = preparedStatement.executeQuery();
             rs.next();
-            p = new Person(personToDisplay.getId(),
+            p = new Person(id,
                     rs.getString("firstname"),
                     rs.getString("lastname"),
                     rs.getInt("age"));
@@ -90,7 +91,7 @@ public class RepositoryPersonSQL implements RepositoryPerson {
             e.printStackTrace();
         }
 
-        return p;
+        return Optional.of(p);
 
     }
 

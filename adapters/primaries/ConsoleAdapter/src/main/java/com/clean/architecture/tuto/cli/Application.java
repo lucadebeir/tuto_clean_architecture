@@ -30,6 +30,9 @@ public class Application {
                     case DISPLAY_ALL_PERSONS:
                         personService.findAll();
                         break;
+                    case DISPLAY_ALL_TEAMS:
+                        teamService.findAll();
+                        break;
                     case DISPLAY_DETAILS_PERSON:
                         personService.displayDetailsPerson(in);
                         break;

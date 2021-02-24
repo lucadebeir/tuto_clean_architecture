@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.net.UnknownHostException;
 import java.util.Objects;
+import java.util.Optional;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +17,7 @@ public class DisplayDetailsPersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-    public Person execute(Person person) throws BusinessException, TechnicalException, UnknownHostException {
+    public Optional<Person> execute(Person person) throws BusinessException, TechnicalException, UnknownHostException {
         if(Objects.isNull(person)) {
             throw new TechnicalException("Person is null");
         } else {
@@ -28,6 +29,6 @@ public class DisplayDetailsPersonUseCase {
                 }
             }
         }
-        return repository.display(person);
+        return repository.findById(person.getId());
     }
 }
