@@ -12,6 +12,45 @@ import java.util.Optional;
 
 public class RepositoryTeamSQL implements RepositoryTeam {
 
+    int idTeam1;
+    int idTeam2;
+    int idPerson1;
+    int idPerson2;
+
+    public void createDataSet() throws SQLException {
+        Connection connection = Config.SingletonSQL.getInstance().getConnection();
+        idTeam1 = insertOneRequete("INSERT INTO team (name) VALUES ('Arsenal')", connection);
+        idPerson1 = insertOneRequete("INSERT INTO person (lastname, firstname, age) VALUES ('Romain', 'Chief', 42)", connection);
+        idTeam2 = insertOneRequete("INSERT INTO team (name) VALUES ('Manchester United')", connection);
+        idPerson2 = insertOneRequete("INSERT INTO person (lastname, firstname, age) VALUES ('Vincent', 'Olivier', 60)", connection);
+
+        connection.createStatement()
+                .execute("INSERT INTO bepartof (idPerson, idTeam) VALUES (" + idPerson1 + ", " + idTeam1 + ")");
+
+        connection.createStatement()
+                .execute("INSERT INTO bepartof (idPerson, idTeam) VALUES (" + idPerson2 + ", " + idTeam2 + ")");
+    }
+
+    public int insertOneRequete(String sql, Connection connection) throws SQLException {
+        connection.createStatement()
+                .execute(sql);
+        ResultSet rs = connection.createStatement()
+                .executeQuery("SELECT LAST_INSERT_ID()");
+        rs.next();
+        return rs.getInt(1);
+    }
+
+    public void removeDataSet() throws SQLException {
+        Connection connection = Config.SingletonSQL.getInstance().getConnection();
+        connection.createStatement()
+                .executeUpdate("DELETE FROM team WHERE id IN (" + idTeam1 + ", " + idTeam2 + ") ");
+        connection.createStatement()
+                .executeUpdate("DELETE FROM bepartof WHERE idTeam IN (" + idTeam1 + ", " + idTeam2 + ") ");
+        connection.createStatement()
+                .executeUpdate("DELETE FROM person WHERE id IN (" + idPerson1 + ", " + idPerson2 + ") ");
+    }
+
+
     @Override
     public Team create(Team team) throws SQLException {
         String SQL_INSERT = "INSERT INTO team (name) VALUES (?)";
@@ -30,7 +69,7 @@ public class RepositoryTeamSQL implements RepositoryTeam {
         int id = rs.getInt(1);
         team.setId(String.valueOf(id));
 
-        for (Person person: team.getList()) {
+        for (Person person : team.getList()) {
             bePartOf(person, team);
         }
 
@@ -82,7 +121,7 @@ public class RepositoryTeamSQL implements RepositoryTeam {
         }
         rs.close();
 
-        return Optional.of(t);
+        return Optional.ofNullable(t);
     }
 
     @Override

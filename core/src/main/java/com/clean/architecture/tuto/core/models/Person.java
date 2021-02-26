@@ -7,11 +7,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class Person {
 
     private String id;
-    private String firstName;
     private String lastName;
+    private String firstName;
     private Integer age;
 
 }
