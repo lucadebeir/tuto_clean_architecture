@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -17,18 +18,23 @@ public class DisplayDetailsTeamUseCase {
 
     private RepositoryTeam repository; //interface
 
-    public Optional<Team> execute(Team team) throws BusinessException, TechnicalException, UnknownHostException {
-        if(Objects.isNull(team)) {
-            throw new TechnicalException("Team is null");
+    public Optional<Team> execute(String id) throws BusinessException, TechnicalException {
+        if(Objects.isNull(id) || id.isEmpty()) {
+            throw new BusinessException("L'id d'une équipe est obligatoire");
         } else {
-            if(Objects.isNull(team.getId()) || team.getId().isEmpty()) {
-                throw new BusinessException("L'id d'une équipe est obligatoire");
-            } else {
-                if(Character.toString(team.getId().charAt(0)).equals("-")) {
-                    throw new BusinessException("L'id d'une équipe ne peut pas être négatif");
-                }
+            if(Character.toString(id.charAt(0)).equals("-")) {
+                throw new BusinessException("L'id d'une équipe ne peut pas être négatif");
             }
         }
-        return repository.findById(team.getId());
+
+        try {
+            return repository.findById(id);
+        } catch (TechnicalException e) {
+            e.printStackTrace();
+            throw e;
+        } catch (UnknownHostException | SQLException e) {
+            e.printStackTrace();
+            throw new TechnicalException(e.getMessage());
+        }
     }
 }

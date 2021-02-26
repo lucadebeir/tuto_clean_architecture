@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -26,9 +27,14 @@ public class CreatePersonUseCase {
      * @throws BusinessException
      * @throws TechnicalException
      */
-    public Person execute(Person person) throws BusinessException, TechnicalException, UnknownHostException {
+    public Person execute(Person person) throws BusinessException, TechnicalException {
         checkBusinessRules(person);
-        return repository.create(person);
+        try {
+            return repository.create(person);
+        } catch (UnknownHostException | SQLException e) {
+            e.printStackTrace();
+            throw new TechnicalException(e.getMessage());
+        }
     }
 
     private void checkBusinessRules(Person person) throws BusinessException, TechnicalException {

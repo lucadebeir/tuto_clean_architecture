@@ -2,9 +2,9 @@ package com.clean.architecture.tuto.rest.endpoints;
 
 import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
-import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.core.use.cases.equipe.CreateTeamUseCase;
+import com.clean.architecture.tuto.core.use.cases.equipe.DisplayDetailsTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
 import com.clean.architecture.tuto.rest.models.ResponseApi;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/team")
@@ -21,24 +22,27 @@ public class TeamController {
 
     private CreateTeamUseCase createTeamUseCase;
     private GetAllTeamUseCase getAllTeamUseCase;
+    private DisplayDetailsTeamUseCase findByIdTeamUseCase;
 
     @Autowired
-    public TeamController(CreateTeamUseCase createTeamUseCase, GetAllTeamUseCase getAllTeamUseCase) {
+    public TeamController(CreateTeamUseCase createTeamUseCase,
+                          GetAllTeamUseCase getAllTeamUseCase,
+                          DisplayDetailsTeamUseCase findByIdTeamUseCase) {
         this.getAllTeamUseCase = getAllTeamUseCase;
         this.createTeamUseCase = createTeamUseCase;
+        this.findByIdTeamUseCase = findByIdTeamUseCase;
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> create(@RequestBody Team team) {
-        try {
-            team = this.createTeamUseCase.execute(team);
-            return new ResponseEntity<>(new ResponseApi<>(team), HttpStatus.OK);
-        } catch (BusinessException e) {
-            return new ResponseEntity<>(new ResponseApi<>(e.getErrorsList()), HttpStatus.BAD_REQUEST);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Erreur technique : Veuillez contacter le support technique")), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> create(@RequestBody Team team) throws TechnicalException, BusinessException {
+        return new ResponseEntity<>(new ResponseApi<>(this.createTeamUseCase.execute(team)), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable("id") String id) throws TechnicalException, BusinessException {
+        Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(id);
+        return optionalTeam.isPresent() ? new ResponseEntity<>(new ResponseApi<>(optionalTeam), HttpStatus.OK)
+                : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/all")

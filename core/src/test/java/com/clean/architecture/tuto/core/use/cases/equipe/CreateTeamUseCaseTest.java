@@ -15,6 +15,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -84,7 +85,7 @@ public class CreateTeamUseCaseTest {
     }
 
     @Test
-    public void should_return_team_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException {
+    public void should_return_team_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
         Mockito.when(this.repository.create(this.teamToCreate)).thenAnswer((i) -> {
             Team t = i.getArgument(0);
             t.setId("1");
@@ -153,7 +154,7 @@ public class CreateTeamUseCaseTest {
     }
 
     @Test
-    public void should_throw_business_exception_when_name_is_not_unique() throws UnknownHostException {
+    public void should_throw_business_exception_when_name_is_not_unique() throws UnknownHostException, SQLException {
 
         Mockito.when(this.repository.existsByName("OL")).thenReturn(true);
 

@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreatePersonUseCaseTest {
@@ -31,7 +32,7 @@ public class CreatePersonUseCaseTest {
     }
 
     @Test
-    public void should_return_person_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException {
+    public void should_return_person_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
         Mockito.when(this.repository.create(this.personToCreate)).thenAnswer((i) -> {
             Person p = i.getArgument(0);
             p.setId("1");

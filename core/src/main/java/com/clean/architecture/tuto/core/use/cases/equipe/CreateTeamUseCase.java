@@ -8,6 +8,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -20,20 +21,30 @@ public class CreateTeamUseCase {
         this.repository = repository;
     }
 
-    public Team execute(Team team) throws TechnicalException, BusinessException, UnknownHostException {
+    public Team execute(Team team) throws TechnicalException, BusinessException {
         checkBusinessRules(team);
-        return repository.create(team);
+        try {
+            return repository.create(team);
+        } catch (UnknownHostException | SQLException e) {
+            e.printStackTrace(); // LOG
+            throw new TechnicalException(e.getMessage());
+        }
     }
 
-    private void checkBusinessRules(Team team) throws BusinessException, TechnicalException, UnknownHostException {
+    private void checkBusinessRules(Team team) throws BusinessException, TechnicalException {
         List<String> errorsList = new ArrayList<>();
         if(Objects.isNull(team)) {
             throw new TechnicalException("Team is null");
         } else {
             testStringMandatory(errorsList, team.getName(), "nom", 20, 2);
 
-            if(StringUtils.isNotEmpty(team.getName()) && this.repository.existsByName(team.getName())) {
-                errorsList.add("Une équipe portant ce nom existe déjà");
+            try {
+                if(StringUtils.isNotEmpty(team.getName()) && this.repository.existsByName(team.getName())) {
+                    errorsList.add("Une équipe portant ce nom existe déjà");
+                }
+            } catch (UnknownHostException | SQLException e) {
+                e.printStackTrace();
+                throw new TechnicalException(e.getMessage());
             }
 
             if(CollectionUtils.isEmpty(team.getList())) {

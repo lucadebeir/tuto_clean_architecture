@@ -5,9 +5,11 @@ import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 
-import java.net.UnknownHostException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
+
+import static com.clean.architecture.tuto.cli.constantes.ConstApp.ERROR_TECHNICAL;
 
 public class PersonService {
 
@@ -29,21 +31,23 @@ public class PersonService {
             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
             Thread.sleep(1500);
         } catch (TechnicalException e) {
-            System.err.println("Erreur technique : Veuillez consulter le support technique");
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
+            System.err.println(ERROR_TECHNICAL);
         }
     }
 
-    public void findAll() throws UnknownHostException {
+    public void findAll() {
         System.out.println("-----------------------------------------------");
         System.out.println("      AFFICHAGE DE TOUTES LES PERSONNES        ");
         System.out.println("-----------------------------------------------");
-        List<Person> list = Config.getAllPersonUseCase().execute();
-        System.out.println("Identifiant | Prenom | Nom | Age");
-        for(Person p: list) {
-            System.out.println(p.getId() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge());
+        List<Person> list = null;
+        try {
+            list = Config.getAllPersonUseCase().execute();
+            System.out.println("Identifiant | Prenom | Nom | Age");
+            list.forEach(p -> System.out.println(p.getId() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge()));
+        } catch (TechnicalException e) {
+            System.err.println(ERROR_TECHNICAL);
         }
+
     }
 
     public void displayDetailsPerson(Scanner in) throws InterruptedException {
@@ -51,18 +55,16 @@ public class PersonService {
             System.out.println("-----------------------------------------------");
             System.out.println("     AFFICHAGE DES DETAILS D'UNE PERSONNE      ");
             System.out.println("-----------------------------------------------");
+            // TODO : GuiUtils.displayTitle("AFFICHAGE DES DETAILS D'UNE PERSONNE");
             System.out.println("Id : ");
             String id = in.nextLine();
-            Person p = new Person(id, null, null, null);
-            p = Config.getDisplayDetailsPersonUseCase().execute(p);
-            System.out.println(p.getFirstName() + " " + p.getLastName() + " a " + p.getAge() + "ans");
+            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(id);
+            optionalPerson.ifPresent(person -> System.out.println(person.getFirstName() + " " + person.getLastName() + " a " + person.getAge() + "ans"));
         } catch (BusinessException e) {
             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
             Thread.sleep(1500);
-        } catch (TechnicalException e) {
-            System.err.println("Erreur technique : Veuillez consulter le support technique");
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
+        } catch (Exception te) {
+            System.err.println(ERROR_TECHNICAL);
         }
 
     }

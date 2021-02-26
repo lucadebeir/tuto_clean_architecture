@@ -1,6 +1,7 @@
 package com.clean.architecture.tuto.rest.endpoints;
 
 import com.clean.architecture.tuto.core.exceptions.BusinessException;
+import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.use.cases.personne.CreatePersonUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.DisplayDetailsPersonUseCase;
@@ -12,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -35,8 +35,7 @@ public class PersonController {
     @GetMapping("/all")
     public ResponseEntity<?> findAll() {
         try {
-            List<Person> allPersons = this.getAllPersonUseCase.execute();
-            return new ResponseEntity<>(new ResponseApi<>(allPersons), HttpStatus.OK);
+            return new ResponseEntity<>(new ResponseApi<>(this.getAllPersonUseCase.execute()), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Erreur technique : Veuillez contacter le support technique")), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -45,31 +44,15 @@ public class PersonController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity<?> findById(@PathVariable("id") String id) {
-        Person p = Person.builder()
-                .id(id).build();
-        try {
-            Optional<Person> optionalPerson = this.displayDetailsPersonUseCase.execute(p);
-            return new ResponseEntity<>(new ResponseApi<>(optionalPerson), HttpStatus.OK);
-        } catch (BusinessException e) {
-            return new ResponseEntity<>(new ResponseApi<>(e.getErrorsList()), HttpStatus.BAD_REQUEST);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Erreur technique : Veuillez contacter le support technique")), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> findById(@PathVariable("id") String id) throws TechnicalException, BusinessException {
+        Optional<Person> optionalPerson = this.displayDetailsPersonUseCase.execute(id);
+        return optionalPerson.isPresent() ? new ResponseEntity<>(new ResponseApi<>(optionalPerson), HttpStatus.OK)
+                                          : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<?> create(@RequestBody Person person) {
-        try {
-            person = this.createPersonUseCase.execute(person);
-            return new ResponseEntity<>(new ResponseApi<>(person), HttpStatus.OK);
-        } catch (BusinessException e) {
-            return new ResponseEntity<>(new ResponseApi<>(e.getErrorsList()), HttpStatus.BAD_REQUEST);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Erreur technique : Veuillez contacter le support technique")), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> create(@RequestBody Person person) throws TechnicalException, BusinessException {
+        return new ResponseEntity<>(new ResponseApi<>(this.createPersonUseCase.execute(person)), HttpStatus.OK);
     }
 
 

@@ -14,6 +14,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.Optional;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -33,9 +34,9 @@ public class DisplayDetailsPersonUseCaseTest {
     }
 
     @Test
-    public void should_return_person_when_display_is_a_success() throws BusinessException, TechnicalException, UnknownHostException {
+    public void should_return_person_when_display_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
         Mockito.when(this.repository.findById(this.personToDisplay.getId())).thenReturn(Optional.of(this.personToDisplay));
-        Optional<Person> optPerson = this.useCase.execute(personToDisplay);
+        Optional<Person> optPerson = this.useCase.execute(personToDisplay.getId());
         Assertions.assertThat(optPerson).isNotNull();
         Assertions.assertThat(optPerson).isPresent();
         optPerson.ifPresent(person -> {
@@ -47,34 +48,31 @@ public class DisplayDetailsPersonUseCaseTest {
     }
 
     @Test
-    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException {
+    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
         Mockito.when(this.repository.findById("9"))
                 .thenReturn(Optional.empty());
-        Optional<Person> optPerson = this.useCase.execute(Person.builder().id("9").build());
+        Optional<Person> optPerson = this.useCase.execute("9");
         Assertions.assertThat(optPerson).isNotPresent();
     }
 
     @Test
     public void should_throw_business_exception_when_id_is_null() {
-        this.personToDisplay.setId(null);
         Assertions.assertThatCode(() -> {
-            this.useCase.execute(personToDisplay);
+            this.useCase.execute(null);
         }).hasMessage("L'id d'une personne est obligatoire").isInstanceOf(BusinessException.class);
     }
 
     @Test
     public void should_throw_business_exception_when_id_is_empty() {
-        this.personToDisplay.setId("");
         Assertions.assertThatCode(() -> {
-            this.useCase.execute(personToDisplay);
+            this.useCase.execute("");
         }).hasMessage("L'id d'une personne est obligatoire").isInstanceOf(BusinessException.class);
     }
 
     @Test
     public void should_throw_business_exception_when_id_is_lt_0() {
-        this.personToDisplay.setId("-1");
         Assertions.assertThatCode(() -> {
-            this.useCase.execute(personToDisplay);
+            this.useCase.execute("-1");
         }).hasMessage("L'id d'une personne ne peut pas être négatif").isInstanceOf(BusinessException.class);
     }
 }
