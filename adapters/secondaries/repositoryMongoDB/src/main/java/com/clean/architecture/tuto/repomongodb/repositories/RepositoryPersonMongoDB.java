@@ -12,24 +12,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RepositoryPersonMongoDB implements RepositoryPerson {
+public class RepositoryPersonMongoDB extends AbstractRepositoryMongoDB implements RepositoryPerson {
 
+    protected DBCollection collection = database.getCollection("person");
 
     @Override
-    public Person create(Person person) throws UnknownHostException {
+    public Person create(Person person) {
         DBObject doc = new BasicDBObject("lastname", person.getLastName())
                 .append("firstname", person.getFirstName())
                 .append("age", person.getAge());
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("person");
         collection.save(doc);
         person.setId(String.valueOf(doc.get( "_id" )));
         return person;
     }
 
     @Override
-    public List<Person> getAll() throws UnknownHostException {
+    public List<Person> getAll() {
         List<Person> list = new ArrayList<>();
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("person");
         Cursor cursor = collection.find();
         while(cursor.hasNext()) {
             DBObject value = cursor.next();
@@ -42,7 +41,7 @@ public class RepositoryPersonMongoDB implements RepositoryPerson {
     }
 
     @Override
-    public Optional<Person> findById(String id) throws TechnicalException, UnknownHostException {
+    public Optional<Person> findById(String id) throws TechnicalException {
         BasicDBObject query = new BasicDBObject();
 
         //check is objectid is valid in mongodb
@@ -53,7 +52,6 @@ public class RepositoryPersonMongoDB implements RepositoryPerson {
 
         query.put("_id", new ObjectId(id));
 
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("person");
         DBObject value = collection.findOne(query);
 
         return Optional.of(new Person(String.valueOf(value.get("_id")),

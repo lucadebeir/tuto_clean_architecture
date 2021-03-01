@@ -2,18 +2,19 @@ package com.clean.architecture.tuto.reposql.repositories;
 
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
-import com.clean.architecture.tuto.reposql.config.Config;
-import com.clean.architecture.tuto.reposql.config.Config.SingletonSQL;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RepositoryPersonSQL implements RepositoryPerson {
+public class RepositoryPersonSQL extends AbstractRepositorySQL implements RepositoryPerson {
+
+    public RepositoryPersonSQL() {
+        super();
+    }
 
     public void createDataSet() throws SQLException {
-        Connection connection = Config.SingletonSQL.getInstance().getConnection();
         connection.createStatement()
                 .execute("INSERT INTO person (lastname, firstname, age) VALUES ('Romain', 'Chief', 42)");
         connection.createStatement()
@@ -21,7 +22,6 @@ public class RepositoryPersonSQL implements RepositoryPerson {
     }
 
     public void removeDataSet() throws SQLException {
-        Connection connection = SingletonSQL.getInstance().getConnection();
         connection.createStatement()
                 .executeUpdate("DELETE FROM person WHERE lastname IN ('Romain', 'Vincent') ");
     }
@@ -31,7 +31,6 @@ public class RepositoryPersonSQL implements RepositoryPerson {
         String SQL_INSERT = "INSERT INTO person (lastname, firstname, age) VALUES (?,?,?)";
         String SQL_GET_ID_INSERTING = "SELECT LAST_INSERT_ID()";
 
-        Connection connection = SingletonSQL.getInstance().getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT);
         preparedStatement.setString(1, person.getLastName());
         preparedStatement.setString(2, person.getFirstName());
@@ -53,7 +52,6 @@ public class RepositoryPersonSQL implements RepositoryPerson {
     @Override
     public List<Person> getAll() throws SQLException {
         List<Person> list = new ArrayList<>();
-        Connection connection = SingletonSQL.getInstance().getConnection();
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM person");
         while (rs.next()) {
@@ -72,7 +70,6 @@ public class RepositoryPersonSQL implements RepositoryPerson {
 
         String SQL_SELECT_PERSON = "SELECT * FROM person WHERE id = ?";
 
-        Connection connection = SingletonSQL.getInstance().getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_PERSON);
         preparedStatement.setString(1, id);
 

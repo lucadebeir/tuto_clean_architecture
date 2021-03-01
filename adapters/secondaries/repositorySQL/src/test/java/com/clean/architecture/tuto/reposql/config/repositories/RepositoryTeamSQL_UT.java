@@ -114,7 +114,10 @@ public class RepositoryTeamSQL_UT {
         this.repositoryTeam.findById(team.getId())
                 .ifPresent(tt -> {
                     Assertions.assertThat(tt.getName()).isEqualTo("PSG");
-                    Assertions.assertThat(tt.getList().contains(p));
+                    //Assertions.assertThat(tt.getList().contains(p)); // YASSINE : Le problème avec cette approche est qu'il faut
+                    // dans 90% des cas avoir fait un equals et hashCode. Une solution qui marche à 100% consiste à faire un
+                    // anyMatch :
+                    Assertions.assertThat(tt.getList().stream().anyMatch(person -> person.getId().equals(p.getId()) ));
                 });
     }
 }

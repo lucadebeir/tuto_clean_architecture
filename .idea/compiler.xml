@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
-        <module name="ConsoleAdapter" />
-        <module name="repositorySQL" />
         <module name="restAdapter" />
+        <module name="repositorySQL" />
+        <module name="core" />
+        <module name="SwingAdapter" />
+        <module name="ConsoleAdapter" />
         <module name="repositoryMongoDB" />
       </profile>
     </annotationProcessing>

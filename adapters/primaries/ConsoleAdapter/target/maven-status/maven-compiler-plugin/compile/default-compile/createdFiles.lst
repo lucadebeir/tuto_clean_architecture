@@ -1,0 +1,9 @@
+com\clean\architecture\tuto\cli\Application.class
+com\clean\architecture\tuto\cli\utils\GuiUtils.class
+com\clean\architecture\tuto\cli\config\Config.class
+com\clean\architecture\tuto\cli\services\PersonService.class
+com\clean\architecture\tuto\cli\services\TeamService.class
+com\clean\architecture\tuto\cli\enums\MainMenuEnum.class
+com\clean\architecture\tuto\cli\Application$1.class
+com\clean\architecture\tuto\cli\gui\MainMenu.class
+com\clean\architecture\tuto\cli\constantes\ConstApp.class

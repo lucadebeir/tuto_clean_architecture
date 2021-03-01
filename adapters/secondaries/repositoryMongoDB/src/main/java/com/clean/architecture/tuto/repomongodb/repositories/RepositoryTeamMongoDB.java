@@ -17,10 +17,12 @@ import java.util.Optional;
 
 @Getter
 @Setter
-public class RepositoryTeamMongoDB implements RepositoryTeam {
+public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements RepositoryTeam {
+
+    protected DBCollection collection = database.getCollection("team");
 
     @Override
-    public Team create(Team team) throws UnknownHostException {
+    public Team create(Team team) {
         List<DBObject> list = new ArrayList<DBObject>();
         for(Person person : team.getList()) {
             list.add(new BasicDBObject("_id", person.getId())
@@ -30,16 +32,14 @@ public class RepositoryTeamMongoDB implements RepositoryTeam {
         }
         DBObject doc = new BasicDBObject("name", team.getName())
                 .append("list", list);
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("team");
         collection.save(doc);
         team.setId(String.valueOf(doc.get( "_id" )));
         return team;
     }
 
     @Override
-    public List<Team> getAll() throws UnknownHostException {
+    public List<Team> getAll() {
         List<Team> allTeam = new ArrayList<>();
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("team");
         DBCursor cursor = collection.find();
         try {
             while(cursor.hasNext()) {
@@ -65,7 +65,7 @@ public class RepositoryTeamMongoDB implements RepositoryTeam {
     }
 
     @Override
-    public Optional<Team> findById(String id) throws UnknownHostException, TechnicalException {
+    public Optional<Team> findById(String id) throws TechnicalException {
         BasicDBObject query = new BasicDBObject();
 
         //check is objectid is valid in mongodb
@@ -76,7 +76,6 @@ public class RepositoryTeamMongoDB implements RepositoryTeam {
 
         query.put("_id", new ObjectId(id));
 
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("team");
         DBObject value = collection.findOne(query);
 
         Team team = Team.builder().id(String.valueOf(value.get( "_id" )))
@@ -96,8 +95,7 @@ public class RepositoryTeamMongoDB implements RepositoryTeam {
     }
 
     @Override
-    public boolean existsByName(String name) throws UnknownHostException {
-        DBCollection collection = Config.SingletonMongoDB.getDatabase("local").getCollection("team");
+    public boolean existsByName(String name) {
         Cursor cursor = collection.find();
         boolean check = false;
         try {

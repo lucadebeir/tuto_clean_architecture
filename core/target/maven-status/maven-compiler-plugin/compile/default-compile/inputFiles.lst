@@ -1,5 +1,12 @@
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\GetAllTeamUseCase.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\exceptions\BusinessException.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\ports\personne\RepositoryPerson.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\personne\GetAllPersonUseCase.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\personne\CreatePersonUseCase.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\ports\equipe\RepositoryTeam.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\personne\DisplayDetailsPersonUseCase.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\models\Person.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\exceptions\TechnicalException.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\CreateTeamUseCase.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\models\Team.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\DisplayDetailsTeamUseCase.java

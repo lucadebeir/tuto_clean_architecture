@@ -8,6 +8,8 @@ import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.CreatePersonUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.DisplayDetailsPersonUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.GetAllPersonUseCase;
+import com.clean.architecture.tuto.repomongodb.repositories.RepositoryPersonMongoDB;
+import com.clean.architecture.tuto.repomongodb.repositories.RepositoryTeamMongoDB;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryPersonSQL;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryTeamSQL;
 import org.springframework.context.annotation.Bean;
@@ -19,11 +21,11 @@ public class UsesCasesCfg {
 
     @Bean
     public RepositoryPerson repositoryPerson()  {
-        return new RepositoryPersonSQL();
+        return new RepositoryPersonMongoDB();
     }
     @Bean
     public RepositoryTeam repositoryTeam()  {
-        return new RepositoryTeamSQL();
+        return new RepositoryTeamMongoDB();
     }
 
     //PERSON
