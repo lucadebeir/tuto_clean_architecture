@@ -21,6 +21,7 @@
         <module>adapters/secondaries/repositorySQL</module>
         <module>adapters/secondaries/repositoryMongoDB</module>
         <module>adapters/primaries/restAdapter</module>
+        <module>adapters/secondaries/repositoryJPA</module>
     </modules>
 
     <build>

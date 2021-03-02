@@ -2,6 +2,7 @@ package com.clean.architecture.tuto.swing.gui.models.tables;
 
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
+import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.swing.config.Config;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,27 +13,23 @@ import java.util.List;
 
 @Getter
 @Setter
-public class DisplayAllPersons extends AbstractTableModel {
+public class DisplayAllTeams extends AbstractTableModel {
 
-    private final String[] columnNames = {"Identifiant", "Prénom", "Nom", "Age"};
-    private List<Person> persons;
+    private final String[] columnNames = {"Identifiant", "Nom"};
+    public List<Team> teams;
 
-    public DisplayAllPersons() {
+    public DisplayAllTeams() {
         try {
-            this.persons = Config.getAllPersonUseCase().execute();
+            this.teams = Config.getAllTeamUseCase().execute();
         } catch (TechnicalException e) {
             JOptionPane.showConfirmDialog(null, e.getMessage(), "Erreur", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
     }
 
-    public DisplayAllPersons(List<Person> persons) {
-        this.persons = persons;
-    }
-
     @Override
     public int getRowCount() {
-        return persons.size();
+        return teams.size();
     }
 
     @Override
@@ -40,11 +37,10 @@ public class DisplayAllPersons extends AbstractTableModel {
         switch (columnIndex) {
             case 0:
             case 1:
-            case 2:
                 return String.class;
 
-            case 3:
-                return Integer.class;
+            case 2:
+                return List.class;
 
             default:
                 return Object.class;
@@ -67,22 +63,19 @@ public class DisplayAllPersons extends AbstractTableModel {
 
             case 0:
                 // Identifiant
-                return persons.get(rowIndex).getId();
+                return teams.get(rowIndex).getId();
 
             case 1:
-                // Prenom
-                return persons.get(rowIndex).getFirstName();
+                // Nom
+                return teams.get(rowIndex).getName();
 
             case 2:
-                // Nom
-                return persons.get(rowIndex).getLastName();
-
-            case 3:
-                // Age
-                return persons.get(rowIndex).getAge();
+                // List
+                return teams.get(rowIndex).getList();
 
             default:
                 throw new IllegalArgumentException();
         }
     }
+
 }

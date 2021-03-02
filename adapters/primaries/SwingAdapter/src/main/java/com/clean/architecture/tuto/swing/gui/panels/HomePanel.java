@@ -1,7 +1,7 @@
 package com.clean.architecture.tuto.swing.gui.panels;
 
-import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.swing.gui.frames.MainWindow;
+import com.clean.architecture.tuto.swing.gui.utils.UtilsIcons;
 import com.clean.architecture.tuto.swing.listeners.ListenerBtnRoot;
 import com.clean.architecture.tuto.swing.listeners.ListenerBtnQuitApp;
 
@@ -41,6 +41,8 @@ public class HomePanel extends JPanel {
 
     private ListenerBtnQuitApp listenerBtnQuitApp;
 
+    private UtilsIcons utilsIcons = new UtilsIcons();
+
     public HomePanel(MainWindow mainWindow) {
 
         this.mainWindow = mainWindow;
@@ -48,13 +50,14 @@ public class HomePanel extends JPanel {
         this.layout = new FlowLayout();
         this.setLayout(this.layout);
 
-        this.listenerBtnRootTeams = new ListenerBtnRoot(mainWindow, new MainTeamsPanel(mainWindow, this));
-        this.listenerBtnRootPersons = new ListenerBtnRoot(mainWindow, new MainPersonsPanel(mainWindow, this));
+        this.listenerBtnRootTeams = new ListenerBtnRoot(mainWindow, "MAIN_TEAMS");
+        this.listenerBtnRootPersons = new ListenerBtnRoot(mainWindow, "MAIN_PERSONS");
         this.listenerBtnQuitApp = new ListenerBtnQuitApp();
 
-        this.btnManageTeams = new JButton("Gérer les équipes");
-        this.btnManagePersons = new JButton("Gérer les personnes");
-        this.btnQuit = new JButton("Quitter");
+        this.btnManageTeams = new JButton("Gérer les équipes", utilsIcons.resizeImage("/images/team_icon.png"));
+        this.btnManagePersons = new JButton("Gérer les personnes", utilsIcons.resizeImage("/images/user_icon.png"));
+        this.btnQuit = new JButton("Quitter", utilsIcons.resizeImage("/images/quit_icon.png"));
+
 
         this.btnManageTeams.addActionListener(this.listenerBtnRootTeams);
         this.btnManagePersons.addActionListener(this.listenerBtnRootPersons);
@@ -64,6 +67,5 @@ public class HomePanel extends JPanel {
         this.add(this.btnManagePersons);
         this.add(this.btnQuit);
     }
-
 
 }

@@ -11,6 +11,7 @@
         <module name="repositorySQL" />
         <module name="core" />
         <module name="SwingAdapter" />
+        <module name="repositoryJPA" />
         <module name="ConsoleAdapter" />
         <module name="repositoryMongoDB" />
       </profile>
@@ -24,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ConsoleAdapter" options="-parameters" />
       <module name="core" options="-parameters" />
+      <module name="repositoryJPA" options="-parameters" />
       <module name="repositoryMongoDB" options="-parameters" />
       <module name="repositorySQL" options="-parameters" />
       <module name="restAdapter" options="-parameters" />

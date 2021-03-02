@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/adapters/primaries/ConsoleAdapter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/src/main/java" charset="UTF-8" />
