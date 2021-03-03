@@ -2,35 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/checkbox/JCheckBoxWithPerson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllTeams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/team/CreateTeamPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/utils/UtilsIcons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CheckPersonListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CreateTeamListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/repositoryJPA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/AbstractRepositoryJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/forms/CreatePerson.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/CreatePersonPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/CreatePersonPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/DisplayAllPersonsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/DisplayAllTeamsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/team/DisplayAllTeamsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/HomePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/MainPersonsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/MainPersonsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/MainTeamsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/team/MainTeamsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/ListenerBtnRoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/ListenerBtnRoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/forms/CreatePerson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/CreatePersonPanel$CreatePersonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/CreatePersonPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/DisplayAllPersonsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/DisplayAllTeamsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/HomePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/HomePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/MainPersonsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/MainTeamsPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/listeners/ListenerBtnRoot.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/listeners/ListenerBtnRoot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/entities/PersonEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/entities/PersonEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/entities/TeamEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/entities/TeamEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/entities/PersonEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/entities/PersonEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/entities/TeamEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/entities/TeamEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/Test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +105,7 @@
       <recent name="com.clean.architecture.tuto.core.use.cases.personne" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.swing.Application" />
       <module name="SwingAdapter" />
@@ -189,10 +176,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Application.CreatePerson" />
-        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="JUnit.RepositoryTeamSQL_UT.find_by_id_should_return_optional_when_id_is_team_created" />
       </list>
     </recent_temporary>
@@ -211,7 +198,7 @@
       <workItem from="1614015458399" duration="342000" />
       <workItem from="1614015813695" duration="2649000" />
       <workItem from="1614069554709" duration="21022000" />
-      <workItem from="1614093568658" duration="96558000" />
+      <workItem from="1614093568658" duration="106929000" />
     </task>
     <servers />
   </component>
@@ -219,6 +206,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="432" y="166" key="#Assign_Data_Sources" timestamp="1614763313158">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="432" y="166" key="#Assign_Data_Sources/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614763313158" />
     <state x="432" y="166" key="#Project_Structure" timestamp="1614698309650">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -235,10 +226,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="92" y="92" width="1496" height="826" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614087694925" />
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614691696573">
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614762005149">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614691696573" />
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614762005149" />
     <state x="278" y="434" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614596114446">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -263,38 +254,38 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694987772" />
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1614697600566">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614697600566" />
-    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1614697600566">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614697600566" />
-    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1614697600566">
+    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614697600566" />
-    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1614697600566">
+    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614697600566" />
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1614694308472">
+    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694308472" />
-    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1614694308472">
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694308472" />
-    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1614694308472">
+    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694308472" />
-    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1614694308472">
+    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1614770467978">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694308472" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614770467978" />
     <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614345396192">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

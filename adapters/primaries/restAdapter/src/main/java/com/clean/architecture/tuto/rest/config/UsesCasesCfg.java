@@ -8,6 +8,8 @@ import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.CreatePersonUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.DisplayDetailsPersonUseCase;
 import com.clean.architecture.tuto.core.use.cases.personne.GetAllPersonUseCase;
+import com.clean.architecture.tuto.repojpa.repositories.RepositoryPersonJPA;
+import com.clean.architecture.tuto.repojpa.repositories.RepositoryTeamJPA;
 import com.clean.architecture.tuto.repomongodb.repositories.RepositoryPersonMongoDB;
 import com.clean.architecture.tuto.repomongodb.repositories.RepositoryTeamMongoDB;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryPersonSQL;
@@ -21,11 +23,11 @@ public class UsesCasesCfg {
 
     @Bean
     public RepositoryPerson repositoryPerson()  {
-        return new RepositoryPersonMongoDB();
+        return new RepositoryPersonJPA();
     }
     @Bean
     public RepositoryTeam repositoryTeam()  {
-        return new RepositoryTeamMongoDB();
+        return new RepositoryTeamJPA();
     }
 
     //PERSON

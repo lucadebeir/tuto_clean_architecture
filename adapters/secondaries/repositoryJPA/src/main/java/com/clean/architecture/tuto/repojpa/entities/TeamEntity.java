@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,14 +18,27 @@ public class TeamEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "name")
     private String name;
 
     @ManyToMany
     @JoinTable(
-            name = "person",
-            joinColumns = @JoinColumn(name = "idPerson"),
-            inverseJoinColumns = @JoinColumn(name = "idTeam")
+            name = "bepartof",
+            joinColumns = @JoinColumn(name = "idTeam"),
+            inverseJoinColumns = @JoinColumn(name = "idPerson")
     )
-    private List<PersonEntity> personsList;
+    private List<PersonEntity> personsList = new ArrayList<>();
+
+    //Getters and setters ommitted for brevity
+
+    public void addPerson(PersonEntity person) {
+        personsList.add(person);
+        person.getTeamsList().add(this);
+    }
+
+    public void removePerson(PersonEntity person) {
+        personsList.remove(person);
+        person.getTeamsList().remove(this);
+    }
 
 }
