@@ -16,4 +16,6 @@ public interface RepositoryPerson {
     List<Person> getAll() throws UnknownHostException, SQLException;
 
     Optional<Person> findById(String id) throws TechnicalException, UnknownHostException, SQLException;
+
+    Person update(Person personToUpdate) throws UnknownHostException, SQLException;
 }
