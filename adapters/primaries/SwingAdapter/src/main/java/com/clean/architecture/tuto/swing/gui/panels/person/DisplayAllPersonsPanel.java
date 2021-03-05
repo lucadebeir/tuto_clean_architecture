@@ -2,6 +2,7 @@ package com.clean.architecture.tuto.swing.gui.panels.person;
 
 import com.clean.architecture.tuto.swing.gui.frames.MainWindow;
 import com.clean.architecture.tuto.swing.gui.models.tables.DisplayAllPersons;
+import com.clean.architecture.tuto.swing.gui.models.tables.TableCell;
 import com.clean.architecture.tuto.swing.listeners.ListenerBtnRoot;
 
 import javax.swing.*;
@@ -36,6 +37,8 @@ public class DisplayAllPersonsPanel extends JPanel {
 
         this.allPersons = new DisplayAllPersons();
         this.table = new JTable(this.allPersons);
+        table.getColumn(" ").setCellRenderer(new TableCell(table, mainWindow));
+        table.getColumn(" ").setCellEditor(new TableCell(table, mainWindow));
         table.setAutoCreateRowSorter(true);
         this.scrollPane = new JScrollPane(this.table);
 

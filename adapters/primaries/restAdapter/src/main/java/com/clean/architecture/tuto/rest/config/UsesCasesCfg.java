@@ -5,9 +5,7 @@ import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
 import com.clean.architecture.tuto.core.use.cases.equipe.CreateTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.equipe.DisplayDetailsTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
-import com.clean.architecture.tuto.core.use.cases.personne.CreatePersonUseCase;
-import com.clean.architecture.tuto.core.use.cases.personne.DisplayDetailsPersonUseCase;
-import com.clean.architecture.tuto.core.use.cases.personne.GetAllPersonUseCase;
+import com.clean.architecture.tuto.core.use.cases.personne.*;
 import com.clean.architecture.tuto.repojpa.repositories.RepositoryPersonJPA;
 import com.clean.architecture.tuto.repojpa.repositories.RepositoryTeamJPA;
 import com.clean.architecture.tuto.repomongodb.repositories.RepositoryPersonMongoDB;
@@ -23,7 +21,7 @@ public class UsesCasesCfg {
 
     @Bean
     public RepositoryPerson repositoryPerson()  {
-        return new RepositoryPersonJPA();
+        return new RepositoryPersonSQL();
     }
     @Bean
     public RepositoryTeam repositoryTeam()  {
@@ -44,6 +42,16 @@ public class UsesCasesCfg {
     @Bean
     public CreatePersonUseCase createPersonUseCase(RepositoryPerson repositoryPerson) {
         return new CreatePersonUseCase(repositoryPerson);
+    }
+
+    @Bean
+    public UpdatePersonUseCase updatePersonUseCase(RepositoryPerson repositoryPerson) {
+        return new UpdatePersonUseCase(repositoryPerson);
+    }
+
+    @Bean
+    public DeletePersonUseCase deletePersonUseCase(RepositoryPerson repositoryPerson) {
+        return new DeletePersonUseCase(repositoryPerson);
     }
 
     //TEAM

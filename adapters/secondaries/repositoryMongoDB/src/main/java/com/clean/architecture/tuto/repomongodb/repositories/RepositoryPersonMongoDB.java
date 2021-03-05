@@ -8,6 +8,7 @@ import com.mongodb.*;
 import org.bson.types.ObjectId;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -58,6 +59,21 @@ public class RepositoryPersonMongoDB extends AbstractRepositoryMongoDB implement
                 String.valueOf(value.get("firstname")),
                 String.valueOf(value.get("lastname")),
                 Integer.parseInt(String.valueOf(value.get("age")))));
+    }
+
+    @Override
+    public Person update(Person personToUpdate) throws UnknownHostException, SQLException {
+        return null;
+    }
+
+    @Override
+    public void deleteById(String id) throws SQLException {
+
+    }
+
+    @Override
+    public boolean existsByIdPerson(String s) {
+        return false;
     }
 
 

@@ -4,6 +4,7 @@ import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.core.ports.equipe.RepositoryTeam;
 
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -130,6 +131,16 @@ public class RepositoryTeamSQL extends AbstractRepositorySQL implements Reposito
             allTeamName.add(rs.getString(1));
         }
         return allTeamName.contains(name);
+    }
+
+    @Override
+    public void deleteById(String id) {
+
+    }
+
+    @Override
+    public Team update(Team team) throws UnknownHostException, SQLException {
+        return null;
     }
 
     public List<Person> getPersonBePartOfTeam(Team team) throws SQLException {

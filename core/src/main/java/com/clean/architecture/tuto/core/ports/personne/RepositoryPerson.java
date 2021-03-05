@@ -1,6 +1,5 @@
 package com.clean.architecture.tuto.core.ports.personne;
 
-import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 
@@ -18,4 +17,8 @@ public interface RepositoryPerson {
     Optional<Person> findById(String id) throws TechnicalException, UnknownHostException, SQLException;
 
     Person update(Person personToUpdate) throws UnknownHostException, SQLException;
+
+    void deleteById(String id) throws SQLException;
+
+    boolean existsByIdPerson(String s);
 }

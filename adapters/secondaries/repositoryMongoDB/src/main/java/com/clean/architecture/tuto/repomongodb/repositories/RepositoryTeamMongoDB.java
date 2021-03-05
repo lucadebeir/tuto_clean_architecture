@@ -11,6 +11,7 @@ import lombok.Setter;
 import org.bson.types.ObjectId;
 
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -109,6 +110,16 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
             cursor.close();
         }
         return check;
+    }
+
+    @Override
+    public void deleteById(String id) {
+
+    }
+
+    @Override
+    public Team update(Team team) throws UnknownHostException, SQLException {
+        return null;
     }
 
 }

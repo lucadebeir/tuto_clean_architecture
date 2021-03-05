@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,8 +21,7 @@ public class UpdatePersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-
-    public Person execute(Person person) throws TechnicalException, BusinessException {
+    public Person execute(Person person) throws TechnicalException, BusinessException, SQLException, UnknownHostException {
         checkBusinessRules(person);
         try {
             return repository.update(person);
@@ -31,11 +31,14 @@ public class UpdatePersonUseCase {
         }
     }
 
-    private void checkBusinessRules(Person person) throws BusinessException, TechnicalException {
+    private void checkBusinessRules(Person person) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
         List<String> errorsList = new ArrayList<>();
         if(Objects.isNull(person)) {
             throw new TechnicalException("Person is null");
         } else {
+            this.repository.findById(person.getId())
+                    .orElseThrow(() -> new BusinessException("L'identifiant "+ person.getId() + " n'existe pas", Collections.singletonList("L'identifiant "+ person.getId() + " n'existe pas")));
+
             testStringMandatory(errorsList, person.getLastName(), "nom", 30, 2);
             testStringMandatory(errorsList, person.getFirstName(), "prenom", 40, 2);
             Integer age = person.getAge();

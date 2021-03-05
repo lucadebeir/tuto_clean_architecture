@@ -1,0 +1,7 @@
+com\clean\architecture\tuto\repojpa\entities\PersonEntity.class
+com\clean\architecture\tuto\repojpa\config\Config$SingletonJPA.class
+com\clean\architecture\tuto\repojpa\config\Config.class
+com\clean\architecture\tuto\repojpa\repositories\RepositoryPersonJPA.class
+com\clean\architecture\tuto\repojpa\entities\TeamEntity.class
+com\clean\architecture\tuto\repojpa\repositories\RepositoryTeamJPA.class
+com\clean\architecture\tuto\repojpa\repositories\AbstractRepositoryJPA.class

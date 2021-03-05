@@ -1,3 +1,4 @@
+com\clean\architecture\tuto\repomongodb\repositories\AbstractRepositoryMongoDB.class
 com\clean\architecture\tuto\repomongodb\config\Config$SingletonMongoDB.class
 com\clean\architecture\tuto\repomongodb\config\Config.class
 com\clean\architecture\tuto\repomongodb\repositories\RepositoryTeamMongoDB.class

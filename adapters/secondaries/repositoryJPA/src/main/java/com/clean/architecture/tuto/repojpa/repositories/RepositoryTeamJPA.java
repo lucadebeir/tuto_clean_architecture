@@ -8,6 +8,8 @@ import com.clean.architecture.tuto.repojpa.entities.TeamEntity;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.TypedQuery;
+import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -112,6 +114,16 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
         }
 
         return allTeam.contains(name);
+    }
+
+    @Override
+    public void deleteById(String id) {
+
+    }
+
+    @Override
+    public Team update(Team team) throws UnknownHostException, SQLException {
+        return null;
     }
 
     /**

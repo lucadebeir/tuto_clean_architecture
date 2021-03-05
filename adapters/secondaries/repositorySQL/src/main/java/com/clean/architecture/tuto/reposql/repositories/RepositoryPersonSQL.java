@@ -3,6 +3,7 @@ package com.clean.architecture.tuto.reposql.repositories;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
 
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +86,40 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
         rs.close();
 
         return Optional.ofNullable(p);
+    }
+
+    @Override
+    public Person update(Person personToUpdate) throws SQLException {
+
+        String SQL_UPDATE_PERSON = "UPDATE person SET lastname = ?, firstname = ?, age = ? WHERE id = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE_PERSON);
+        preparedStatement.setString(1, personToUpdate.getLastName());
+        preparedStatement.setString(2, personToUpdate.getFirstName());
+        preparedStatement.setInt(3, personToUpdate.getAge());
+        preparedStatement.setString(4, personToUpdate.getId());
+
+        preparedStatement.execute();
+        preparedStatement.close();
+
+        return personToUpdate;
+    }
+
+    @Override
+    public void deleteById(String id) throws SQLException {
+
+        String SQL_DELETE_PERSON = "DELETE FROM person WHERE id = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_DELETE_PERSON);
+        preparedStatement.setString(1, id);
+
+        preparedStatement.execute();
+        preparedStatement.close();
+    }
+
+    @Override
+    public boolean existsByIdPerson(String s) {
+        return false;
     }
 
 }

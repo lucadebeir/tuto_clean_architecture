@@ -3,11 +3,16 @@ com\clean\architecture\tuto\core\use\cases\equipe\CreateTeamUseCase.class
 com\clean\architecture\tuto\core\ports\equipe\RepositoryTeam.class
 com\clean\architecture\tuto\core\ports\personne\RepositoryPerson.class
 com\clean\architecture\tuto\core\use\cases\personne\DisplayDetailsPersonUseCase.class
+com\clean\architecture\tuto\core\use\cases\equipe\UpdateTeamUseCase.class
+com\clean\architecture\tuto\core\models\DeleteInformations.class
 com\clean\architecture\tuto\core\models\Team$TeamBuilder.class
 com\clean\architecture\tuto\core\use\cases\personne\GetAllPersonUseCase.class
 com\clean\architecture\tuto\core\use\cases\personne\CreatePersonUseCase.class
+com\clean\architecture\tuto\core\use\cases\personne\UpdatePersonUseCase.class
+com\clean\architecture\tuto\core\use\cases\personne\DeletePersonUseCase.class
 com\clean\architecture\tuto\core\exceptions\BusinessException.class
 com\clean\architecture\tuto\core\exceptions\TechnicalException.class
+com\clean\architecture\tuto\core\use\cases\equipe\DeleteTeamUseCase.class
 com\clean\architecture\tuto\core\models\Person$PersonBuilder.class
 com\clean\architecture\tuto\core\models\Team.class
 com\clean\architecture\tuto\core\models\Person.class

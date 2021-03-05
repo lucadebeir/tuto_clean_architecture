@@ -2,12 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/TableCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/UpdatePersonListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/equipe/DeleteTeamUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/equipe/UpdateTeamUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/DeletePersonUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/equipe/DeleteTeamUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/equipe/UpdateTeamUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/personne/DeletePersonUseCaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/config/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/META-INF/build-info.properties" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/META-INF/build-info.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +132,7 @@
       <recent name="com.clean.architecture.tuto.core.use.cases.personne" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UpdatePersonUseCaseTest">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.swing.Application" />
       <module name="SwingAdapter" />
@@ -109,20 +146,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.repojpa.repositories.Test" />
-      <module name="repositoryJPA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.clean.architecture.tuto.repojpa.repositories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UpdatePersonUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DeletePersonUseCaseTest.should_success_when_id_not_exist_in_db" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="core" />
       <extension name="coverage">
         <pattern>
@@ -131,24 +155,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases.personne" />
-      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.personne.UpdatePersonUseCaseTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UpdatePersonUseCaseTest.should_throw_business_exception_when_id_is_null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.clean.architecture.tuto.core.use.cases.personne.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases.personne" />
-      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.personne.UpdatePersonUseCaseTest" />
-      <option name="METHOD_NAME" value="should_throw_business_exception_when_id_is_null" />
+      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.personne.DeletePersonUseCaseTest" />
+      <option name="METHOD_NAME" value="should_success_when_id_not_exist_in_db" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeletePersonUseCaseTest.should_throw_business_exception_when_id_not_exist_in_db" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.core.use.cases.personne.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases.personne" />
+      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.personne.DeletePersonUseCaseTest" />
+      <option name="METHOD_NAME" value="should_throw_business_exception_when_id_not_exist_in_db" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpdateTeamUseCaseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clean.architecture.tuto.core.use.cases.equipe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.clean.architecture.tuto.core.use.cases.equipe" />
+      <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.core.use.cases.equipe.UpdateTeamUseCaseTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UpdatePersonUseCaseTest" />
-        <item itemvalue="JUnit.UpdatePersonUseCaseTest.should_throw_business_exception_when_id_is_null" />
-        <item itemvalue="Spring Boot.Application" />
-        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="JUnit.DeletePersonUseCaseTest.should_success_when_id_not_exist_in_db" />
+        <item itemvalue="JUnit.DeletePersonUseCaseTest.should_throw_business_exception_when_id_not_exist_in_db" />
+        <item itemvalue="JUnit.UpdateTeamUseCaseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +230,7 @@
       <workItem from="1614015458399" duration="342000" />
       <workItem from="1614015813695" duration="2649000" />
       <workItem from="1614069554709" duration="21022000" />
-      <workItem from="1614093568658" duration="112645000" />
+      <workItem from="1614093568658" duration="132061000" />
     </task>
     <servers />
   </component>
@@ -218,18 +258,18 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="92" y="92" width="1496" height="826" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614087694925" />
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614762005149">
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614956665484">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614762005149" />
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614956665484" />
     <state x="278" y="434" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614596114446">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="278" y="434" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614596114446" />
-    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614080323965">
+    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614944025220">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614080323965" />
+    <state x="572" y="374" width="583" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614944025220" />
     <state x="486" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614693927352">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -238,62 +278,62 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="570" y="255" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614607125671" />
-    <state width="460" height="466" key="DebuggerActiveHint" timestamp="1614346626565">
+    <state width="460" height="466" key="DebuggerActiveHint" timestamp="1614954561483">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="460" height="466" key="DebuggerActiveHint/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614346626565" />
+    <state width="460" height="466" key="DebuggerActiveHint/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614954561483" />
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl" timestamp="1614694987772">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694987772" />
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1614870808931">
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1614958038463">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870808931" />
-    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1614870808931">
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
+    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1614958038463">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870808931" />
-    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1614870808931">
+    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
+    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1614958038463">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870808931" />
-    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1614870808931">
+    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
+    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1614958038463">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870808931" />
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1614870225799">
+    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1614958038355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870225799" />
-    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1614870225799">
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
+    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1614958038355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870225799" />
-    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1614870225799">
+    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
+    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1614958038355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870225799" />
-    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1614870225799">
+    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
+    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1614958038355">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614870225799" />
-    <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614345396192">
+    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
+    <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.2.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614345396192" />
-    <state width="1637" height="336" key="GridCell.Tab.2.center" timestamp="1614345396192">
+    <state width="1637" height="336" key="GridCell.Tab.2.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614957422755" />
+    <state width="1637" height="336" key="GridCell.Tab.2.center" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.2.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614345396192" />
-    <state width="1637" height="336" key="GridCell.Tab.2.left" timestamp="1614345396192">
+    <state width="1637" height="336" key="GridCell.Tab.2.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614957422755" />
+    <state width="1637" height="336" key="GridCell.Tab.2.left" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.2.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614345396192" />
-    <state width="1637" height="336" key="GridCell.Tab.2.right" timestamp="1614345396192">
+    <state width="1637" height="336" key="GridCell.Tab.2.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614957422755" />
+    <state width="1637" height="336" key="GridCell.Tab.2.right" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.2.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614345396192" />
+    <state width="1637" height="336" key="GridCell.Tab.2.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614957422755" />
     <state x="370" y="163" key="Maven.ArtifactSearchDialog" timestamp="1614684073261">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -306,10 +346,10 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="173" y="94" width="1419" height="845" key="SettingsEditor/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614598260433" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1614612302713">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1614955580399">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614612302713" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614955580399" />
     <state x="548" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1614093568547">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -342,21 +382,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/utils/UtilsIcons.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCaseTest.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/team/CreateTeamPanel.java</url>
           <line>38</line>
@@ -368,6 +393,14 @@
           <line>37</line>
           <properties field="form" class="com.clean.architecture.tuto.swing.gui.panels.team.CreateTeamPanel" />
           <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java</url>
+          <line>23</line>
+          <properties class="com.clean.architecture.tuto.core.use.cases.personne.UpdatePersonUseCase" method="execute">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

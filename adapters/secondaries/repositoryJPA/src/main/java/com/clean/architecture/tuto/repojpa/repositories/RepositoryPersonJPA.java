@@ -6,6 +6,8 @@ import com.clean.architecture.tuto.repojpa.entities.PersonEntity;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.TypedQuery;
+import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -88,5 +90,20 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
 
         return Optional.ofNullable(person);
 
+    }
+
+    @Override
+    public Person update(Person personToUpdate) throws UnknownHostException, SQLException {
+        return null;
+    }
+
+    @Override
+    public void deleteById(String id) throws SQLException {
+
+    }
+
+    @Override
+    public boolean existsByIdPerson(String s) {
+        return false;
     }
 }

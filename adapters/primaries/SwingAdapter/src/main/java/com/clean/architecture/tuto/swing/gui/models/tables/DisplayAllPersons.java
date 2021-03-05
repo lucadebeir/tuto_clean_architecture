@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 public class DisplayAllPersons extends AbstractTableModel {
 
-    private final String[] columnNames = {"Identifiant", "Prénom", "Nom", "Age"};
+    private final String[] columnNames = {"Identifiant", "Prénom", "Nom", "Age", " "};
     private List<Person> persons;
 
     public DisplayAllPersons() {
@@ -45,6 +45,9 @@ public class DisplayAllPersons extends AbstractTableModel {
 
             case 3:
                 return Integer.class;
+
+            case 4:
+                return TableCell.class;
 
             default:
                 return Object.class;
@@ -80,6 +83,9 @@ public class DisplayAllPersons extends AbstractTableModel {
             case 3:
                 // Age
                 return persons.get(rowIndex).getAge();
+
+            case 4:
+                return "";
 
             default:
                 throw new IllegalArgumentException();
