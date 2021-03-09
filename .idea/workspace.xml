@@ -2,49 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/TableCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/UpdatePersonListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/equipe/DeleteTeamUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/equipe/UpdateTeamUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/DeletePersonUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/equipe/DeleteTeamUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/equipe/UpdateTeamUseCaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/clean/architecture/tuto/core/use/cases/personne/DeletePersonUseCaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/e2e/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/configurations/material.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/base/mapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/base/use-case.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/core.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/domain/person.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/repositories/person.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/create-person.usecase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/get-all-persons.usecase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/get-person-by-id.usecase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/data.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httpconfig.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/response-api-wrapper.repository.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/response-api.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/presentation.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/config/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/config/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/models/tables/DisplayAllPersons.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/target/classes/com/clean/architecture/tuto/swing/gui/panels/person/DisplayAllPersonsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/config/UsesCasesCfg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CreatePersonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CreatePersonListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/META-INF/build-info.properties" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/META-INF/build-info.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/config/UsesCasesCfg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/src/main/java/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryPersonJPA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/RepositoryTeamJPA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryJPA/target/classes/com/clean/architecture/tuto/repojpa/repositories/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/src/main/java/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryPersonMongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/classes/com/clean/architecture/tuto/repomongodb/repositories/RepositoryTeamMongoDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositoryMongoDB/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/src/main/java/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryPersonSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/secondaries/repositorySQL/target/classes/com/clean/architecture/tuto/reposql/repositories/RepositoryTeamSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/equipe/RepositoryTeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/ports/personne/RepositoryPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/classes/com/clean/architecture/tuto/core/use/cases/personne/UpdatePersonUseCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +95,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -85,13 +111,17 @@
     </option>
   </component>
   <component name="ProjectId" id="1oq3usJ5O9JXzoya09wf923vAWA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -102,18 +132,19 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/adapters/secondaries" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\primaries\SwingAdapter\src\main\resources\images" />
-      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\primaries\SwingAdapter\src\main\java\com\clean\architecture\tuto\swing\views\images" />
-      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\primaries\SwingAdapter\src\main\java\com\clean\architecture\tuto\swing\views" />
-      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\secondaries\repositorySQL\src\main\java" />
-      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\adapters\secondaries" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.clean.architecture.tuto.core.exceptions" />
+      <recent name="com.clean.architecture.tuto.core.ports.personne" />
+      <recent name="com.clean.architecture.tuto.core.models" />
+      <recent name="com.clean.architecture.tuto.core.use.cases.personne" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.clean.architecture.tuto.core.use.cases.equipe" />
@@ -125,14 +156,15 @@
       <recent name="com.clean.architecture.tuto.swing.config" />
       <recent name="com.clean.architecture.tuto.swing.gui.panels" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.clean.architecture.tuto.core.exceptions" />
-      <recent name="com.clean.architecture.tuto.core.ports.personne" />
-      <recent name="com.clean.architecture.tuto.core.models" />
-      <recent name="com.clean.architecture.tuto.core.use.cases.personne" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\src\app\presentation" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\src\app\core" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\src\app\services\person" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\src\app\views\person" />
+      <recent name="C:\Users\luca\IdeaProjects\tuto_clean_architecture\frontend\src\app\views" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clean.architecture.tuto.swing.Application" />
       <module name="SwingAdapter" />
@@ -193,6 +225,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="E2E Tests (frontend)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="restAdapter" />
       <extension name="coverage">
@@ -206,10 +249,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Angular CLI Server (frontend)" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.DeletePersonUseCaseTest.should_success_when_id_not_exist_in_db" />
         <item itemvalue="JUnit.DeletePersonUseCaseTest.should_throw_business_exception_when_id_not_exist_in_db" />
         <item itemvalue="JUnit.UpdateTeamUseCaseTest" />
@@ -230,12 +283,16 @@
       <workItem from="1614015458399" duration="342000" />
       <workItem from="1614015813695" duration="2649000" />
       <workItem from="1614069554709" duration="21022000" />
-      <workItem from="1614093568658" duration="132061000" />
+      <workItem from="1614093568658" duration="136277000" />
+      <workItem from="1615278767740" duration="21817000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="432" y="166" key="#Assign_Data_Sources" timestamp="1614763313158">
@@ -258,10 +315,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="92" y="92" width="1496" height="826" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614087694925" />
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1614956665484">
+    <state x="542" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615282400862">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614956665484" />
+    <state x="542" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615282400862" />
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser" timestamp="1615289681282">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="645" y="198" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615289681282" />
     <state x="278" y="434" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614596114446">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -286,38 +347,38 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694987772" />
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1614958038463">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
-    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1614958038463">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
-    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1614958038463">
+    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
-    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1614958038463">
+    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038463" />
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1614958038355">
+    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
-    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1614958038355">
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
-    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1614958038355">
+    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
-    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1614958038355">
+    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1615296017074">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614958038355" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
     <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -346,14 +407,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="173" y="94" width="1419" height="845" key="SettingsEditor/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614598260433" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1614955580399">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1615300182137">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614955580399" />
-    <state x="548" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1614093568547">
+    <state width="498" height="446" key="SwitcherDM/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615300182137" />
+    <state x="548" y="332" key="com.intellij.ide.util.TipDialog" timestamp="1615278772465">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="548" y="332" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614093568547" />
+    <state x="548" y="332" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615278772465" />
     <state x="570" y="267" width="540" height="482" key="extract.method.dialog" timestamp="1614007707902">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -366,14 +427,18 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="387" y="220" width="1235" height="582" key="new project wizard/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614695001027" />
-    <state x="582" y="139" key="refactoring.ChangeSignatureDialog" timestamp="1614587906771">
+    <state x="703" y="431" width="348" height="298" key="org.angular.cli.generate" timestamp="1615279724016">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="582" y="139" key="refactoring.ChangeSignatureDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614587906771" />
-    <state x="496" y="233" key="run.anything.popup" timestamp="1614349676344">
+    <state x="703" y="431" width="348" height="298" key="org.angular.cli.generate/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615279724016" />
+    <state x="582" y="139" key="refactoring.ChangeSignatureDialog" timestamp="1615289594210">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614349676344" />
+    <state x="582" y="139" key="refactoring.ChangeSignatureDialog/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615289594210" />
+    <state x="496" y="233" key="run.anything.popup" timestamp="1615297137139">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="496" y="233" key="run.anything.popup/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615297137139" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1614695466526">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

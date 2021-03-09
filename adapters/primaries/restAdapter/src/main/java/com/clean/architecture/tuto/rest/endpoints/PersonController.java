@@ -38,6 +38,7 @@ public class PersonController {
         this.updatePersonUseCase = updatePersonUseCase;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all")
     public ResponseEntity<?> findAll() {
         try {
@@ -48,6 +49,7 @@ public class PersonController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{id}")
     @ResponseBody
     public ResponseEntity<?> findById(@PathVariable("id") String id) throws TechnicalException, BusinessException {
@@ -56,6 +58,7 @@ public class PersonController {
                                           : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
     public ResponseEntity<?> create(@RequestBody Person person) throws TechnicalException, BusinessException {
         return new ResponseEntity<>(new ResponseApi<>(this.createPersonUseCase.execute(person)), HttpStatus.OK);

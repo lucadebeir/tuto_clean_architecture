@@ -35,7 +35,6 @@ public class CreatePersonListener implements ActionListener {
                         .lastName(Objects.nonNull(createPersonPanel.getLastname()) ? createPersonPanel.getLastname().getText() : "")
                         .age(Objects.nonNull(createPersonPanel.getAge()) && Objects.nonNull(createPersonPanel.getAge().getValue()) ? (Integer) createPersonPanel.getAge().getValue() : 0)
                         .build());
-
                 mainWindow.updatePanel(new MainPersonsPanel(mainWindow));
             } catch (BusinessException ex) {
                 JOptionPane.showMessageDialog(null, ex.getMessage().split(","), "Erreur",  JOptionPane.ERROR_MESSAGE);
