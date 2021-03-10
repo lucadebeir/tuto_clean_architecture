@@ -2,73 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/e2e/src/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/e2e/src/app.po.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/e2e/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/alert.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/_alert/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/configurations/material.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/base/mapper.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/base/use-case.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/core.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/domain/person.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/repositories/person.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/create-person.usecase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/get-all-persons.usecase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/usecases/get-person-by-id.usecase.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/data.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httpconfig.interceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/response-api-wrapper.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/response-api.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/component/dialog/dialog.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/presentation/presentation.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/tslint.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CreatePersonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/SwingAdapter/src/main/java/com/clean/architecture/tuto/swing/listeners/CreatePersonListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,6 +72,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/adapters/secondaries" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/frontend/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -228,6 +169,7 @@
     <configuration name="E2E Tests (frontend)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/frontend/node_modules/protractor" />
       <protractor-options value="" />
       <envs />
       <scope-kind value="ALL" />
@@ -284,7 +226,7 @@
       <workItem from="1614015813695" duration="2649000" />
       <workItem from="1614069554709" duration="21022000" />
       <workItem from="1614093568658" duration="136277000" />
-      <workItem from="1615278767740" duration="21817000" />
+      <workItem from="1615278767740" duration="33243000" />
     </task>
     <servers />
   </component>
@@ -347,38 +289,38 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694987772" />
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1615391575178">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
+    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1615391575177">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
+    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1615391575177">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
+    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1615391575177">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1615391575178">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
+    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1615391575178">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
+    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1615391575178">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
-    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1615296017074">
+    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1615391575178">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615296017074" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
     <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -466,6 +408,12 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

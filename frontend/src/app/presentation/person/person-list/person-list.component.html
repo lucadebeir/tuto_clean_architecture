@@ -5,7 +5,7 @@
     </div>
   </div>
   <br />
-  <!--<div class="row">
+  <div class="row">
     <div class="column">
       <table>
         <thead>
@@ -23,11 +23,12 @@
           <td>{{person.lastName}}</td>
           <td>{{person.age}}</td>
           <td><button mat-raised-button color="warn" (click)="update(person)">Modifier</button></td>
+          <td><button color="alert">Supprimer</button></td>
         </tr>
         </tbody>
       </table>
     </div>
-  </div>-->
+  </div>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.

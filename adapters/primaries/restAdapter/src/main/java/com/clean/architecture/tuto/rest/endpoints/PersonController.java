@@ -61,6 +61,7 @@ public class PersonController {
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
     public ResponseEntity<?> create(@RequestBody Person person) throws TechnicalException, BusinessException {
+        System.out.println(person);
         return new ResponseEntity<>(new ResponseApi<>(this.createPersonUseCase.execute(person)), HttpStatus.OK);
     }
 

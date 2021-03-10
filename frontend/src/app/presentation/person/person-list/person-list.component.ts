@@ -15,7 +15,7 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class PersonListComponent implements OnInit {
 
-  allPersons$: Observable<Person[]> | undefined;
+  allPersons$?: Observable<Person[]>;
   person!: Person;
   action: string = '';
 
@@ -30,6 +30,8 @@ export class PersonListComponent implements OnInit {
   }
 
   refresh() {
+    this.allPersons$ = this.getAllPersons.execute();
+
     this.getAllPersons.execute().subscribe(data => {
       this.dataSource.data = data;
     });
