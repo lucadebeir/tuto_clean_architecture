@@ -2,6 +2,7 @@ package com.clean.architecture.tuto.reposql.config.repositories;
 
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.models.Team;
+import com.clean.architecture.tuto.core.utils.Utils;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryPersonSQL;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryTeamSQL;
 import org.assertj.core.api.Assertions;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class RepositoryTeamSQL_UT {
     private RepositoryPersonSQL repositoryPerson;
 
     @Before
-    public void setUp() throws SQLException {
+    public void setUp() throws SQLException, UnsupportedEncodingException {
         // TODO : Ne fais pas ce que je fais :
         this.repositoryTeam = new RepositoryTeamSQL();
         this.repositoryPerson = new RepositoryPersonSQL();
@@ -36,7 +38,7 @@ public class RepositoryTeamSQL_UT {
     }
 
     @Test
-    public void creer_team_should_return_team_with_id_and_some_informations() throws SQLException {
+    public void creer_team_should_return_team_with_id_and_some_informations() throws SQLException, UnsupportedEncodingException {
         List<Person> list = new ArrayList<>();
         Person p = this.repositoryPerson.create(Person.builder()
                 .age(18)
@@ -49,11 +51,8 @@ public class RepositoryTeamSQL_UT {
                 .build();
         Team team = this.repositoryTeam.create(t);
         Assertions.assertThat(team).isNotNull();
-        Assertions.assertThat(team.getId()).isNotNull();
-        Assertions.assertThat(team.getId()).isNotEmpty();
-
-        Integer id = Integer.valueOf(team.getId());
-        Assertions.assertThat(id).isGreaterThan(0);
+        Assertions.assertThat(team.getUuid()).isNotNull();
+        Assertions.assertThat(team.getUuid()).isNotEmpty();
 
         Assertions.assertThat(team.getName()).isEqualTo("PSG");
     }
@@ -93,11 +92,11 @@ public class RepositoryTeamSQL_UT {
 
     @Test
     public void find_by_id_should_return_empty_optional_when_id_is_unknown() throws SQLException {
-        Assertions.assertThat(this.repositoryTeam.findById("99999")).isNotPresent();
+        Assertions.assertThat(this.repositoryTeam.findByUuid(Utils.getByteArrayFromGuid("99999"))).isNotPresent();
     }
 
     @Test
-    public void find_by_id_should_return_optional_when_id_is_team_created() throws SQLException {
+    public void find_by_id_should_return_optional_when_id_is_team_created() throws SQLException, UnsupportedEncodingException {
         List<Person> list = new ArrayList<>();
         Person p = this.repositoryPerson.create(Person.builder()
                 .age(18)
@@ -109,15 +108,15 @@ public class RepositoryTeamSQL_UT {
                 .list(list)
                 .build();
         Team team = this.repositoryTeam.create(t);
-        Assertions.assertThat(this.repositoryTeam.findById(team.getId())).isPresent();
+        Assertions.assertThat(this.repositoryTeam.findByUuid(team.getUuid())).isPresent();
 
-        this.repositoryTeam.findById(team.getId())
+        this.repositoryTeam.findByUuid(team.getUuid())
                 .ifPresent(tt -> {
                     Assertions.assertThat(tt.getName()).isEqualTo("PSG");
                     //Assertions.assertThat(tt.getList().contains(p)); // YASSINE : Le problème avec cette approche est qu'il faut
                     // dans 90% des cas avoir fait un equals et hashCode. Une solution qui marche à 100% consiste à faire un
                     // anyMatch :
-                    Assertions.assertThat(tt.getList().stream().anyMatch(person -> person.getId().equals(p.getId()) ));
+                    Assertions.assertThat(tt.getList().stream().anyMatch(person -> person.getUuid().equals(p.getUuid()) ));
                 });
     }
 }

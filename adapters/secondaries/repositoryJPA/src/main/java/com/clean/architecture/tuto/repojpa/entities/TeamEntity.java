@@ -16,8 +16,8 @@ import java.util.List;
 public class TeamEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "uuid", columnDefinition="BINARY(16)")
+    private byte[] uuid;
     @Column(name = "name")
     private String name;
 

@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class CreatePersonUseCase {
         checkBusinessRules(person);
         try {
             return repository.create(person);
-        } catch (UnknownHostException | SQLException e) {
+        } catch (UnknownHostException | SQLException | UnsupportedEncodingException e) {
             e.printStackTrace();
             throw new TechnicalException(e.getMessage());
         }

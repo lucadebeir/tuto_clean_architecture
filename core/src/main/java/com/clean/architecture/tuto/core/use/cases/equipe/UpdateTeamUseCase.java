@@ -37,8 +37,8 @@ public class UpdateTeamUseCase {
         if(Objects.isNull(team)) {
             throw new TechnicalException("Team is null");
         } else {
-            if(Objects.isNull(team.getId())) {
-                errorsList.add("L'id d'une équipe que l'on modifie ne peut pas être nul");
+            if(Objects.isNull(team.getUuid())) {
+                errorsList.add("L'uuid d'une équipe que l'on modifie ne peut pas être nul");
             } else {
                 testStringMandatory(errorsList, team.getName(), "nom", 20, 2);
 

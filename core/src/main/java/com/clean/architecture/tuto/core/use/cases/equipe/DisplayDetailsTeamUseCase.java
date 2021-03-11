@@ -18,17 +18,13 @@ public class DisplayDetailsTeamUseCase {
 
     private RepositoryTeam repository; //interface
 
-    public Optional<Team> execute(String id) throws BusinessException, TechnicalException {
-        if(Objects.isNull(id) || id.isEmpty()) {
-            throw new BusinessException("L'id d'une équipe est obligatoire");
-        } else {
-            if(Character.toString(id.charAt(0)).equals("-")) {
-                throw new BusinessException("L'id d'une équipe ne peut pas être négatif");
-            }
+    public Optional<Team> execute(byte[] uuid) throws BusinessException, TechnicalException {
+        if(Objects.isNull(uuid) || uuid.length == 0) {
+            throw new BusinessException("L'uuid d'une équipe est obligatoire");
         }
 
         try {
-            return repository.findById(id);
+            return repository.findByUuid(uuid);
         } catch (TechnicalException e) {
             e.printStackTrace();
             throw e;

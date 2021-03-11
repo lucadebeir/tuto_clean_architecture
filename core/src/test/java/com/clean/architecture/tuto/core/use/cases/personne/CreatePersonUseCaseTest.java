@@ -4,6 +4,7 @@ import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
+import com.clean.architecture.tuto.core.utils.Utils;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,8 +13,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CreatePersonUseCaseTest {
@@ -27,22 +30,23 @@ public class CreatePersonUseCaseTest {
     //constructeur pour les tests, variables communes à tous les tests
     @Before
     public void setUp() {
-        this.personToCreate = new Person(null,"Luca", "Debeir", 25);
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+        this.personToCreate = new Person(uuid,"Luca", "Debeir", 25);
         this.useCase = new CreatePersonUseCase(repository);
     }
 
     @Test
-    public void should_return_person_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
+    public void should_return_person_when_creation_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException, UnsupportedEncodingException {
         Mockito.when(this.repository.create(this.personToCreate)).thenAnswer((i) -> {
             Person p = i.getArgument(0);
-            p.setId("1");
             return p;
         });
         Person person = this.useCase.execute(personToCreate);
         Assertions.assertThat(person).isNotNull();
-        Assertions.assertThat(person.getId()).isNotNull();
-        Assertions.assertThat(person.getFirstName()).isEqualTo("Luca");
-        Assertions.assertThat(person.getLastName()).isEqualTo("Debeir");
+        Assertions.assertThat(person.getUuid()).isNotNull();
+        Assertions.assertThat(Utils.getGuidFromByteArray(person.getUuid())).isEqualTo("123e4567-e89b-12d3-a456-556642440000");
+        Assertions.assertThat(person.getFirstName()).isEqualTo("Debeir");
+        Assertions.assertThat(person.getLastName()).isEqualTo("Luca");
         Assertions.assertThat(person.getAge()).isEqualTo(25);
     }
 

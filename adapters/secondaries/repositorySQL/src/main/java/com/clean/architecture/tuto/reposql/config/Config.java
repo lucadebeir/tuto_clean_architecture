@@ -9,7 +9,7 @@ public class Config {
     public static class SingletonSQL {
         private static SingletonSQL instance;
         private Connection connection;
-        private String url = "jdbc:mysql://127.0.0.1:3306/tuto?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC";
+        private String url = "jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC";
         private String username = "root";
         private String password = "root";
 

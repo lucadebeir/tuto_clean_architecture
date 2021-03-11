@@ -4,6 +4,7 @@ import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
+import com.clean.architecture.tuto.core.utils.Utils;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,8 +13,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UpdatePersonUseCaseTest {
@@ -27,8 +30,9 @@ public class UpdatePersonUseCaseTest {
     //constructeur pour les tests, variables communes à tous les tests
     @Before
     public void setUp() {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
         this.personToUpdate = Person.builder()
-                .id("1")
+                .uuid(uuid)
                 .lastName("Debeir")
                 .firstName("Luca")
                 .age(25)
@@ -42,9 +46,10 @@ public class UpdatePersonUseCaseTest {
             Person p = i.getArgument(0);
             return p;
         });
+
         Person person = this.useCase.execute(personToUpdate);
         Assertions.assertThat(person).isNotNull();
-        Assertions.assertThat(person.getId()).isNotNull();
+        Assertions.assertThat(person.getUuid()).isNotNull();
         Assertions.assertThat(person.getFirstName()).isEqualTo("Luca");
         Assertions.assertThat(person.getLastName()).isEqualTo("Debeir");
         Assertions.assertThat(person.getAge()).isEqualTo(25);
@@ -52,10 +57,10 @@ public class UpdatePersonUseCaseTest {
 
     @Test
     public void should_throw_business_exception_when_id_is_null() {
-        this.personToUpdate.setId(null);
+        this.personToUpdate.setUuid(null);
         Assertions.assertThatCode(() -> {
             this.useCase.execute(personToUpdate);
-        }).hasMessage("L'id d'une personne que l'on modifie ne peut pas être nul").isInstanceOf(BusinessException.class);
+        }).hasMessage("L'uuid d'une personne que l'on modifie ne peut pas être nul").isInstanceOf(BusinessException.class);
     }
 
     @Test

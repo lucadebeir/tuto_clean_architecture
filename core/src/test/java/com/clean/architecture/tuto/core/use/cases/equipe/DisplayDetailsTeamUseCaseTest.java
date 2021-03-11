@@ -5,6 +5,7 @@ import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.core.ports.equipe.RepositoryTeam;
+import com.clean.architecture.tuto.core.utils.Utils;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +14,12 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -31,30 +34,32 @@ public class DisplayDetailsTeamUseCaseTest {
 
     //constructeur pour les tests, variables communes à tous les tests
     @Before
-    public void setUp() {
-        this.teamToDisplay = Team.builder().id("1").name("OM").list(getStubPersons()).build();
+    public void setUp() throws UnsupportedEncodingException {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+        this.teamToDisplay = Team.builder().uuid(uuid).name("OM").list(getStubPersons()).build();
         this.useCase = new DisplayDetailsTeamUseCase(repository);
     }
 
-    private List<Person> getStubPersons() {
-        Person p1 = new Person("1", "Luca", "Stagiaire", 25);
-        Person p2 = new Person("2", "Abc", "Btagiaire", 25);
-        Person p3 = new Person("3", "Def", "Ctagiaire", 25);
-        Person p4 = new Person("4", "Ghi", "Dtagiaire", 25);
-        Person p5 = new Person("5", "Toto", "Stagiaire", 25);
-        Person p6 = new Person("6", "Tutu", "Stagiaire", 25);
-        Person p7 = new Person("7", "Titi", "Stagiaire", 25);
+    private List<Person> getStubPersons() throws UnsupportedEncodingException {
+        Person p1 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000"), "Luca", "Stagiaire", 25);
+        Person p2 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440001"), "Abc", "Btagiaire", 25);
+        Person p3 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440002"), "Def", "Ctagiaire", 25);
+        Person p4 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440003"), "Ghi", "Dtagiaire", 25);
+        Person p5 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440004"), "Toto", "Stagiaire", 25);
+        Person p6 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440005"), "Tutu", "Stagiaire", 25);
+        Person p7 = new Person(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440006"), "Titi", "Stagiaire", 25);
         return Stream.of(p1, p2, p3, p4, p5, p6, p7)
                 .collect(Collectors.toList());
     }
 
     @Test
-    public void should_return_team_when_display_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
-        Mockito.when(this.repository.findById(this.teamToDisplay.getId())).thenReturn(Optional.of(this.teamToDisplay));
-        Optional<Team> optTeam = this.useCase.execute("1");
+    public void should_return_team_when_display_is_a_success() throws BusinessException, TechnicalException, UnknownHostException, SQLException, UnsupportedEncodingException {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+        Mockito.when(this.repository.findByUuid(this.teamToDisplay.getUuid())).thenReturn(Optional.of(this.teamToDisplay));
+        Optional<Team> optTeam = this.useCase.execute(uuid);
         Assertions.assertThat(optTeam).isPresent();
         optTeam.ifPresent(team -> {
-            Assertions.assertThat(team.getId()).isEqualTo("1");
+            Assertions.assertThat(Utils.getGuidFromByteArray(team.getUuid())).isEqualTo("123e4567-e89b-12d3-a456-556642440000");
             Assertions.assertThat(team.getName()).isEqualTo("OM");
             Assertions.assertThat(team.getList()).hasSize(7);
         });
@@ -64,21 +69,15 @@ public class DisplayDetailsTeamUseCaseTest {
     public void should_throw_business_exception_when_id_is_null() {
         Assertions.assertThatCode(() -> {
             this.useCase.execute(null);
-        }).hasMessage("L'id d'une équipe est obligatoire").isInstanceOf(BusinessException.class);
+        }).hasMessage("L'uuid d'une équipe est obligatoire").isInstanceOf(BusinessException.class);
     }
 
     @Test
-    public void should_throw_business_exception_when_id_is_lt_0() {
-        Assertions.assertThatCode(() -> {
-            this.useCase.execute("-1");
-        }).hasMessage("L'id d'une équipe ne peut pas être négatif").isInstanceOf(BusinessException.class);
-    }
-
-    @Test
-    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
-        Mockito.when(this.repository.findById("9"))
+    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException, SQLException, UnsupportedEncodingException {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+        Mockito.when(this.repository.findByUuid(uuid))
                 .thenReturn(Optional.empty());
-        Optional<Team> optTeam = this.useCase.execute("9");
+        Optional<Team> optTeam = this.useCase.execute(uuid);
         Assertions.assertThat(optTeam).isNotPresent();
     }
 

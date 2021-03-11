@@ -27,7 +27,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
             t.setName(team.getName());
             team.getList().forEach(person -> {
                 PersonEntity pe = new PersonEntity();
-                pe.setId(Integer.parseInt(person.getId()));
+                pe.setUuid(person.getUuid());
                 pe.setFirstname(person.getFirstName());
                 pe.setLastname(person.getLastName());
                 pe.setAge(person.getAge());
@@ -36,7 +36,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
 
             em.persist(t); // save
 
-            team.setId(String.valueOf(t.getId()));
+            team.setUuid(t.getUuid());
 
             em.getTransaction().commit();
         } catch (Exception e) {
@@ -58,7 +58,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
 
             teamEntityList.forEach(teamEntity -> {
                 allTeam.add(Team.builder()
-                        .id(String.valueOf(teamEntity.getId()))
+                        .uuid(teamEntity.getUuid())
                         .name(teamEntity.getName())
                         .list(getListPersonOfATeam(teamEntity))
                         .build());
@@ -73,18 +73,18 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
     }
 
     @Override
-    public Optional<Team> findById(String id) {
+    public Optional<Team> findByUuid(byte[] uuid) {
         Team team = null;
 
         try {
             em.getTransaction().begin();
 
-            TypedQuery<TeamEntity> query = em.createQuery("SELECT t FROM TeamEntity t WHERE t.id = :id ", TeamEntity.class);
-            query.setParameter("id", Integer.parseInt(id));
+            TypedQuery<TeamEntity> query = em.createQuery("SELECT t FROM TeamEntity t WHERE t.uuid = :uuid ", TeamEntity.class);
+            query.setParameter("uuid", uuid);
             TeamEntity te = query.getSingleResult();
 
             team = Team.builder()
-                    .id(id)
+                    .uuid(uuid)
                     .name(te.getName())
                     .list(getListPersonOfATeam(te))
                     .build();
@@ -117,7 +117,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
     }
 
     @Override
-    public void deleteById(String id) {
+    public void deleteByUuid(byte[] uuid) {
 
     }
 
@@ -135,7 +135,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
         List<Person> personList = new ArrayList<>();
         teamEntity.getPersonsList().forEach(personEntity -> {
             personList.add(Person.builder()
-                    .id(String.valueOf(personEntity.getId()))
+                    .uuid(personEntity.getUuid())
                     .firstName(personEntity.getFirstname())
                     .lastName(personEntity.getLastname())
                     .age(personEntity.getAge())

@@ -3,11 +3,13 @@ package com.clean.architecture.tuto.reposql.repositories;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public class RepositoryPersonSQL extends AbstractRepositorySQL implements RepositoryPerson {
 
@@ -16,10 +18,12 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     }
 
     public void createDataSet() throws SQLException {
+        UUID uuid1 = UUID.randomUUID();
+        UUID uuid2 = UUID.randomUUID();
         connection.createStatement()
-                .execute("INSERT INTO person (lastname, firstname, age) VALUES ('Romain', 'Chief', 42)");
+                .execute("INSERT INTO person (uuid, lastname, firstname, age) VALUES (uuid1, 'Romain', 'Chief', 42)");
         connection.createStatement()
-                .execute("INSERT INTO person (lastname, firstname, age) VALUES ('Vincent', 'Olivier', 60)");
+                .execute("INSERT INTO person (lastname, firstname, age) VALUES (uuid2, 'Vincent', 'Olivier', 60)");
     }
 
     public void removeDataSet() throws SQLException {
@@ -28,24 +32,19 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     }
 
     @Override
-    public Person create(Person person) throws SQLException {
-        String SQL_INSERT = "INSERT INTO person (lastname, firstname, age) VALUES (?,?,?)";
-        String SQL_GET_ID_INSERTING = "SELECT LAST_INSERT_ID()";
+    public Person create(Person person) throws SQLException, UnsupportedEncodingException {
+        String SQL_INSERT = "INSERT INTO person (uuid, lastname, firstname, age) VALUES (?,?,?,?)";
+        byte[] uuid = UUID.randomUUID().toString().getBytes("UTF-8");
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT);
-        preparedStatement.setString(1, person.getLastName());
-        preparedStatement.setString(2, person.getFirstName());
-        preparedStatement.setInt(3, person.getAge());
+        preparedStatement.setBytes(1, uuid);
+        preparedStatement.setString(2, person.getLastName());
+        preparedStatement.setString(3, person.getFirstName());
+        preparedStatement.setInt(4, person.getAge());
 
         preparedStatement.executeUpdate();
 
-        Statement stmt = connection.createStatement();
-        ResultSet rs = stmt.executeQuery(SQL_GET_ID_INSERTING);
-
-        // rows affected
-        rs.next();
-        int id = rs.getInt(1);
-        person.setId(String.valueOf(id));
+        person.setUuid(uuid);
 
         return person;
     }
@@ -56,7 +55,7 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM person");
         while (rs.next()) {
-            list.add(new Person(rs.getString(1),
+            list.add(new Person(rs.getBytes(1),
                     rs.getString(2),
                     rs.getString(3),
                     rs.getInt(4)
@@ -67,17 +66,17 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     }
 
     @Override
-    public Optional<Person> findById(String id) throws SQLException {
+    public Optional<Person> findByUuid(byte[] uuid) throws SQLException {
 
-        String SQL_SELECT_PERSON = "SELECT * FROM person WHERE id = ?";
+        String SQL_SELECT_PERSON = "SELECT * FROM person WHERE uuid = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_SELECT_PERSON);
-        preparedStatement.setString(1, id);
+        preparedStatement.setBytes(1, uuid);
 
         ResultSet rs = preparedStatement.executeQuery();
         Person p = null;
         while(rs.next()) {
-            p = Person.builder().id(id)
+            p = Person.builder().uuid(uuid)
                     .lastName(rs.getString("lastname"))
                     .firstName(rs.getString("firstname"))
                     .age(rs.getInt("age"))
@@ -91,13 +90,13 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     @Override
     public Person update(Person personToUpdate) throws SQLException {
 
-        String SQL_UPDATE_PERSON = "UPDATE person SET lastname = ?, firstname = ?, age = ? WHERE id = ?";
+        String SQL_UPDATE_PERSON = "UPDATE person SET lastname = ?, firstname = ?, age = ? WHERE uuid = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE_PERSON);
         preparedStatement.setString(1, personToUpdate.getLastName());
         preparedStatement.setString(2, personToUpdate.getFirstName());
         preparedStatement.setInt(3, personToUpdate.getAge());
-        preparedStatement.setString(4, personToUpdate.getId());
+        preparedStatement.setBytes(4, personToUpdate.getUuid());
 
         preparedStatement.execute();
         preparedStatement.close();
@@ -106,19 +105,19 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     }
 
     @Override
-    public void deleteById(String id) throws SQLException {
+    public void deleteByUuid(byte[] uuid) throws SQLException {
 
-        String SQL_DELETE_PERSON = "DELETE FROM person WHERE id = ?";
+        String SQL_DELETE_PERSON = "DELETE FROM person WHERE uuid = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_DELETE_PERSON);
-        preparedStatement.setString(1, id);
+        preparedStatement.setBytes(1, uuid);
 
         preparedStatement.execute();
         preparedStatement.close();
     }
 
     @Override
-    public boolean existsByIdPerson(String s) {
+    public boolean existsByUuidPerson(byte[] s) {
         return false;
     }
 

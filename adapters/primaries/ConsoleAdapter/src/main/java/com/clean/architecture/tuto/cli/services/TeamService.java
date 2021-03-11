@@ -6,6 +6,7 @@
     import com.clean.architecture.tuto.core.exceptions.TechnicalException;
     import com.clean.architecture.tuto.core.models.Person;
     import com.clean.architecture.tuto.core.models.Team;
+    import com.clean.architecture.tuto.core.utils.Utils;
 
     import java.util.*;
 
@@ -35,7 +36,7 @@
 
                     list.forEach(element -> {
                         try {
-                            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(element);
+                            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(Utils.getByteArrayFromGuid(element));
                             optionalPerson.ifPresent(person -> personList.add(person));
                         } catch (BusinessException e) {
                             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
@@ -48,7 +49,7 @@
                 newTeam.setList(personList);
                 newTeam = Config.getCreateTeamUseCase().execute(newTeam);
 
-                System.out.println(newTeam.getName() + " a l'identifiant " + newTeam.getId());
+                System.out.println(newTeam.getName() + " a l'identifiant " + newTeam.getUuid());
             } catch (BusinessException e) {
                 System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
                 Thread.sleep(1500);
@@ -63,9 +64,9 @@
                 List<Team> list = Config.getAllTeamUseCase().execute();
                 System.out.println("Identifiant | Nom de l'équipe");
                 list.forEach(t -> {
-                    System.out.println(t.getId() + " | " + t.getName());
+                    System.out.println(t.getUuid() + " | " + t.getName());
                     System.out.println("Identifiant | Prenom | Nom | Age");
-                    t.getList().forEach(p -> System.out.println(p.getId() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge()));
+                    t.getList().forEach(p -> System.out.println(p.getUuid() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge()));
                     System.out.println("-----------------------------------------------");
                 });
             } catch (TechnicalException e) {
@@ -77,10 +78,10 @@
         public void findById(Scanner in) throws InterruptedException {
             try {
                 GuiUtils.displayTitle("AFFICHAGE DES DETAILS D'UNE EQUIPE");
-                System.out.println("Id : ");
-                String id = in.nextLine();
+                System.out.println("Uuid : ");
+                String uuid = in.nextLine();
 
-                Optional<Team> optionalTeam = Config.findByIdTeamUseCase().execute(id);
+                Optional<Team> optionalTeam = Config.findByIdTeamUseCase().execute(Utils.getByteArrayFromGuid(uuid));
 
                 optionalTeam.ifPresent(team -> {
                     System.out.println("Nom de l'equipe : " + team.getName());

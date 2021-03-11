@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+
+    <input matInput
+           placeholder="Firstname"
+           formControlName="firstName">
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <input matInput
+           placeholder="Lastname"
+           formControlName="lastName">
+
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <input matInput
+           placeholder="Age"
+           formControlName="age">
+
+  </mat-form-field>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+  <button mat-button mat-dialog-close
+          (click)="close()">
+    Annuler
+  </button>
+
+  <button class="mat-raised-button mat-primary"
+          (click)="save()">
+    Valider
+  </button>
+
+</mat-dialog-actions>

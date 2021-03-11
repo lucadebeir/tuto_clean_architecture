@@ -10,6 +10,7 @@ com\clean\architecture\tuto\core\use\cases\personne\GetAllPersonUseCase.class
 com\clean\architecture\tuto\core\use\cases\personne\CreatePersonUseCase.class
 com\clean\architecture\tuto\core\use\cases\personne\UpdatePersonUseCase.class
 com\clean\architecture\tuto\core\use\cases\personne\DeletePersonUseCase.class
+com\clean\architecture\tuto\core\utils\Utils.class
 com\clean\architecture\tuto\core\exceptions\BusinessException.class
 com\clean\architecture\tuto\core\exceptions\TechnicalException.class
 com\clean\architecture\tuto\core\use\cases\equipe\DeleteTeamUseCase.class

@@ -4,6 +4,7 @@ import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
+import com.clean.architecture.tuto.core.utils.Utils;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -36,15 +37,17 @@ public class UpdatePersonUseCase {
         if(Objects.isNull(person)) {
             throw new TechnicalException("Person is null");
         } else {
-            this.repository.findById(person.getId())
-                    .orElseThrow(() -> new BusinessException("L'identifiant "+ person.getId() + " n'existe pas", Collections.singletonList("L'identifiant "+ person.getId() + " n'existe pas")));
+            if (Objects.isNull(person.getUuid())) {
+                errorsList.add("L'uuid d'une personne que l'on modifie ne peut pas être nul");
+            }
+
+            //this.repository.findByUuid(person.getUuid())
+              //      .orElseThrow(() -> new BusinessException("L'identifiant "+ Utils.getGuidFromByteArray(person.getUuid()) + " n'existe pas", Collections.singletonList("L'identifiant "+ Utils.getGuidFromByteArray(person.getUuid()) + " n'existe pas")));
 
             testStringMandatory(errorsList, person.getLastName(), "nom", 30, 2);
             testStringMandatory(errorsList, person.getFirstName(), "prenom", 40, 2);
             Integer age = person.getAge();
-            if (Objects.isNull(person.getId())) {
-                errorsList.add("L'id d'une personne que l'on modifie ne peut pas être nul");
-            }
+
             if(Objects.isNull(age)) {
                 errorsList.add("L'age d'une personne est obligatoire");
             } else {

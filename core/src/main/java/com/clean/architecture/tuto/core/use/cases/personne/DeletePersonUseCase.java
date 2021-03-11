@@ -4,45 +4,44 @@ import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.DeleteInformations;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
+import com.clean.architecture.tuto.core.utils.Utils;
 import lombok.AllArgsConstructor;
 
+import javax.rmi.CORBA.Util;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 @AllArgsConstructor
 public class DeletePersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-    public DeleteInformations execute(String id) throws BusinessException, SQLException, TechnicalException, UnknownHostException {
+    public DeleteInformations execute(byte[] uuid) throws BusinessException, SQLException, TechnicalException, UnknownHostException {
 
         DeleteInformations result = new DeleteInformations();
 
-        isDeletable(id);
+        isDeletable(uuid);
 
-        repository.deleteById(id);
-        result.addIdDeleted(id);
+        repository.deleteByUuid(uuid);
+        result.addUuidDeleted(uuid);
         return result;
     }
 
-    private void isDeletable(String id) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
-        if(Objects.isNull(id) || id.isEmpty()) {
-            throw new BusinessException("L'id d'une personne est obligatoire", Collections.singletonList("L'id d'une personne est obligatoire"));
+    private void isDeletable(byte[] uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+        if(Objects.isNull(uuid) || uuid.length == 0) {
+            throw new BusinessException("L'uuid d'une personne est obligatoire", Collections.singletonList("L'uuid d'une personne est obligatoire"));
         } else {
 
-            if(Character.toString(id.charAt(0)).equals("-")) {
-                throw new BusinessException("L'id d'une personne ne peut pas être négatif", Collections.singletonList("L'id d'une personne ne peut pas être négatif"));
-            } else {
-                if(repository.existsByIdPerson(id)) {
-                    throw new BusinessException("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum.", Collections.singletonList("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum."));
-                }
+            if(repository.existsByUuidPerson(uuid)) {
+                throw new BusinessException("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum.", Collections.singletonList("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum."));
             }
 
-            this.repository.findById(id)
-                    .orElseThrow(() -> new BusinessException("L'identifiant "+ id + " n'existe pas", Collections.singletonList("L'identifiant "+ id + " n'existe pas")));
+            this.repository.findByUuid(uuid)
+                    .orElseThrow(() -> new BusinessException("L'identifiant "+ Utils.getGuidFromByteArray(uuid) + " n'existe pas", Collections.singletonList("L'identifiant "+ UUID.nameUUIDFromBytes(uuid).toString() + " n'existe pas")));
 
         }
     }

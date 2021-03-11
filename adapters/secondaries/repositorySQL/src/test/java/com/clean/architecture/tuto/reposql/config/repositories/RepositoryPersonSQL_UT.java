@@ -1,6 +1,7 @@
 package com.clean.architecture.tuto.reposql.config.repositories;
 
 import com.clean.architecture.tuto.core.models.Person;
+import com.clean.architecture.tuto.core.utils.Utils;
 import com.clean.architecture.tuto.reposql.repositories.RepositoryPersonSQL;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
@@ -9,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -31,15 +33,12 @@ public class RepositoryPersonSQL_UT {
     }
 
     @Test
-    public void creer_person_should_return_person_with_id_and_some_informations() throws SQLException {
+    public void creer_person_should_return_person_with_id_and_some_informations() throws SQLException, UnsupportedEncodingException {
         Person p = Person.builder().age(18).firstName("Titeuf").lastName("Eponge").build();
         Person person = this.repositoryPerson.create(p);
         Assertions.assertThat(person).isNotNull();
-        Assertions.assertThat(person.getId()).isNotNull();
-        Assertions.assertThat(person.getId()).isNotEmpty();
-
-        Integer id = Integer.valueOf(person.getId());
-        Assertions.assertThat(id).isGreaterThan(0);
+        Assertions.assertThat(person.getUuid()).isNotNull();
+        Assertions.assertThat(person.getUuid()).isNotEmpty();
 
         Assertions.assertThat(person.getAge()).isEqualTo(18);
         Assertions.assertThat(person.getFirstName()).isEqualTo("Titeuf");
@@ -63,16 +62,16 @@ public class RepositoryPersonSQL_UT {
 
     @Test
     public void find_by_id_should_return_empty_optional_when_id_is_unknown() throws SQLException {
-        Assertions.assertThat(this.repositoryPerson.findById("99999")).isNotPresent();
+        Assertions.assertThat(this.repositoryPerson.findByUuid(Utils.getByteArrayFromGuid("99999"))).isNotPresent();
     }
 
     @Test
-    public void find_by_id_should_return_optional_when_id_is_person_created() throws SQLException {
+    public void find_by_id_should_return_optional_when_id_is_person_created() throws SQLException, UnsupportedEncodingException {
         Person p = Person.builder().age(18).firstName("Titeuf").lastName("Eponge").build();
         Person person = this.repositoryPerson.create(p);
-        Assertions.assertThat(this.repositoryPerson.findById(person.getId())).isPresent();
+        Assertions.assertThat(this.repositoryPerson.findByUuid(person.getUuid())).isPresent();
 
-        this.repositoryPerson.findById(person.getId())
+        this.repositoryPerson.findByUuid(person.getUuid())
                 .ifPresent(pp -> {
                     Assertions.assertThat(pp.getLastName()).isEqualTo("Eponge");
                     Assertions.assertThat(pp.getFirstName()).isEqualTo("Titeuf");

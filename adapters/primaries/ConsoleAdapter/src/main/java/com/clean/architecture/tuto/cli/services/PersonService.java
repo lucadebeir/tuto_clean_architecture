@@ -4,6 +4,7 @@ import com.clean.architecture.tuto.cli.config.Config;
 import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.Person;
+import com.clean.architecture.tuto.core.utils.Utils;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +27,7 @@ public class PersonService {
             String age = in.nextLine();
             Person newPerson = new Person(null, firstname, lastname, Integer.parseInt(age));
             newPerson = Config.getCreatePersonUseCase().execute(newPerson);
-            System.out.println(newPerson.getFirstName() + " a l'identifiant " + newPerson.getId());
+            System.out.println(newPerson.getFirstName() + " a l'identifiant " + newPerson.getUuid());
         } catch (BusinessException e) {
             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
             Thread.sleep(1500);
@@ -43,7 +44,7 @@ public class PersonService {
         try {
             list = Config.getAllPersonUseCase().execute();
             System.out.println("Identifiant | Prenom | Nom | Age");
-            list.forEach(p -> System.out.println(p.getId() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge()));
+            list.forEach(p -> System.out.println(p.getUuid() + " | " + p.getFirstName() + " | " + p.getLastName() + " | " + p.getAge()));
         } catch (TechnicalException e) {
             System.err.println(ERROR_TECHNICAL);
         }
@@ -56,9 +57,9 @@ public class PersonService {
             System.out.println("     AFFICHAGE DES DETAILS D'UNE PERSONNE      ");
             System.out.println("-----------------------------------------------");
             // TODO : GuiUtils.displayTitle("AFFICHAGE DES DETAILS D'UNE PERSONNE");
-            System.out.println("Id : ");
-            String id = in.nextLine();
-            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(id);
+            System.out.println("Uuid : ");
+            String uuid = in.nextLine();
+            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(Utils.getByteArrayFromGuid(uuid));
             optionalPerson.ifPresent(person -> System.out.println(person.getFirstName() + " " + person.getLastName() + " a " + person.getAge() + "ans"));
         } catch (BusinessException e) {
             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));

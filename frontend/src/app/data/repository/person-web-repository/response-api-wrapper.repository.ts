@@ -13,6 +13,4 @@ export class ResponseApiWrapperRepository<T> extends Mapper<ResponseApiEntity< T
       errors: []
     };
   }
-
-
 }

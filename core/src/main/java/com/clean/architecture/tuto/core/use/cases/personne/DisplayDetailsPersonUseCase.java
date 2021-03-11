@@ -18,16 +18,12 @@ public class DisplayDetailsPersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-    public Optional<Person> execute(String id) throws BusinessException, TechnicalException {
-        if(Objects.isNull(id) || id.isEmpty()) {
-            throw new BusinessException("L'id d'une personne est obligatoire");
-        } else {
-            if(Character.toString(id.charAt(0)).equals("-")) {
-                throw new BusinessException("L'id d'une personne ne peut pas être négatif");
-            }
+    public Optional<Person> execute(byte[] uuid) throws BusinessException, TechnicalException {
+        if(Objects.isNull(uuid) || uuid.length == 0) {
+            throw new BusinessException("L'uuid d'une personne est obligatoire");
         }
         try {
-            return repository.findById(id);
+            return repository.findByUuid(uuid);
         } catch (TechnicalException e) {
             e.printStackTrace();
             throw e;

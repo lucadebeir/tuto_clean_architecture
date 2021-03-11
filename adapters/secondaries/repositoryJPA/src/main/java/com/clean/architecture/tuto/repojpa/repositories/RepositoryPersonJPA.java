@@ -27,7 +27,7 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
 
             em.persist(p); // save
 
-            person.setId(String.valueOf(p.getId()));
+            person.setUuid(p.getUuid());
 
             em.getTransaction().commit();
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
 
             personList.forEach(pp -> {
                 allPerson.add(Person.builder()
-                        .id(String.valueOf(pp.getId()))
+                        .uuid(pp.getUuid())
                         .firstName(pp.getFirstname())
                         .lastName(pp.getLastname())
                         .age(pp.getAge())
@@ -65,18 +65,18 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
     }
 
     @Override
-    public Optional<Person> findById(String id) {
+    public Optional<Person> findByUuid(byte[] uuid) {
         Person person = null;
 
         try {
             em.getTransaction().begin();
 
-            TypedQuery<PersonEntity> query = em.createQuery("SELECT p FROM PersonEntity p WHERE p.id = :id ", PersonEntity.class);
-            query.setParameter("id", Integer.parseInt(id));
+            TypedQuery<PersonEntity> query = em.createQuery("SELECT p FROM PersonEntity p WHERE p.uuid = :uuid ", PersonEntity.class);
+            query.setParameter("uuid", uuid);
             PersonEntity pe = query.getSingleResult();
 
             person = Person.builder()
-                    .id(id)
+                    .uuid(uuid)
                     .firstName(pe.getFirstname())
                     .lastName(pe.getLastname())
                     .age(pe.getAge())
@@ -98,12 +98,12 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
     }
 
     @Override
-    public void deleteById(String id) throws SQLException {
+    public void deleteByUuid(byte[] uuid) throws SQLException {
 
     }
 
     @Override
-    public boolean existsByIdPerson(String s) {
+    public boolean existsByUuidPerson(byte[] s) {
         return false;
     }
 }

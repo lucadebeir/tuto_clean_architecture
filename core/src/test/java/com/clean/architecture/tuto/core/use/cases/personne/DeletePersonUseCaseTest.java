@@ -5,6 +5,7 @@ import com.clean.architecture.tuto.core.exceptions.TechnicalException;
 import com.clean.architecture.tuto.core.models.DeleteInformations;
 import com.clean.architecture.tuto.core.models.Person;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
+import com.clean.architecture.tuto.core.utils.Utils;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,9 +14,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.io.UnsupportedEncodingException;
 import java.net.UnknownHostException;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.UUID;
 
 @RunWith(MockitoJUnitRunner.class)
 public class DeletePersonUseCaseTest {
@@ -33,32 +36,37 @@ public class DeletePersonUseCaseTest {
 
     @Test
     public void should_success_when_id_not_exist_in_db() throws TechnicalException, SQLException, UnknownHostException, BusinessException {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
 
-        Mockito.when(this.repository.findById("5"))
-                .thenReturn(Optional.of(new Person("5", "Toto", "Tata", 8)));
+        Mockito.when(this.repository.findByUuid(uuid))
+                .thenReturn(Optional.of(new Person(uuid, "Toto", "Tata", 8)));
 
-        DeleteInformations di = this.useCase.execute("5");
+        DeleteInformations di = this.useCase.execute(uuid);
 
         Assertions.assertThat(di).isNotNull();
-        Assertions.assertThat(di.getIdsDeleted()).isNotEmpty();
-        Assertions.assertThat(di.getIdsDeleted()).hasSize(1);
-        Assertions.assertThat(di.getIdsDeleted().get(0)).isEqualTo("5");
+        Assertions.assertThat(di.getUuidsDeleted()).isNotEmpty();
+        Assertions.assertThat(di.getUuidsDeleted()).hasSize(1);
+        Assertions.assertThat(di.getUuidsDeleted().get(0)).isEqualTo(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000"));
     }
 
     @Test
     public void should_throw_business_exception_when_id_not_exist_in_db() {
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+
         Assertions.assertThatCode(() -> {
-                    this.useCase.execute("9");
+                    this.useCase.execute(uuid);
          }).isInstanceOf(BusinessException.class)
-          .hasMessage("L'identifiant 9 n'existe pas");
+          .hasMessage("L'identifiant 123e4567-e89b-12d3-a456-556642440000 n'existe pas");
     }
 
     @Test
     public void should_throw_business_exception_when_id_use_in_team() {
-        Mockito.when(this.repository.existsByIdPerson("1")).thenAnswer(i -> true);
+        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+
+        Mockito.when(this.repository.existsByUuidPerson(uuid)).thenAnswer(i -> true);
 
         Assertions.assertThatCode(() -> {
-            this.useCase.execute("1");
+            this.useCase.execute(uuid);
         }).hasMessage("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum.").isInstanceOf(BusinessException.class);
 
     }

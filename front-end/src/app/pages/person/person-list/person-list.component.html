@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="column-center">
+      <button mat-button class="button-outline" (click)="refresh()">Refresh</button>
+    </div>
+  </div>
+  <br />
+  <!--<div class="row">
+    <div class="column">
+      <table>
+        <thead>
+        <tr>
+          <th>Identifiant</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let person of allPersons$ | async">
+          <td>{{person.id}}</td>
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+          <td>{{person.age}}</td>
+          <td><button mat-raised-button color="warn" (click)="update(person)">Modifier</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>-->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="identifiant">
+      <th mat-header-cell *matHeaderCellDef> Identifiant </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstname">
+      <th mat-header-cell *matHeaderCellDef> Firstname </th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lastname">
+      <th mat-header-cell *matHeaderCellDef> Lastname </th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-raised-button color="warn" (click)="update(element)">Modifier</button>
+        <button color="alert">Supprimer</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br />
+  <div>
+    <button mat-button class="mat-raised-button mat-accent"
+            (click)="create()">
+      Créer une personne
+    </button>
+  </div>
+</div>
+

@@ -6,6 +6,7 @@ import com.clean.architecture.tuto.core.models.Team;
 import com.clean.architecture.tuto.core.use.cases.equipe.CreateTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.equipe.DisplayDetailsTeamUseCase;
 import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
+import com.clean.architecture.tuto.core.utils.Utils;
 import com.clean.architecture.tuto.rest.models.ResponseApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,9 +39,9 @@ public class TeamController {
         return new ResponseEntity<>(new ResponseApi<>(this.createTeamUseCase.execute(team)), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable("id") String id) throws TechnicalException, BusinessException {
-        Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(id);
+    @GetMapping("/{uuid}")
+    public ResponseEntity<?> findById(@PathVariable("uuid") String uuid) throws TechnicalException, BusinessException {
+        Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(Utils.getByteArrayFromGuid(uuid));
         return optionalTeam.isPresent() ? new ResponseEntity<>(new ResponseApi<>(optionalTeam), HttpStatus.OK)
                 : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }

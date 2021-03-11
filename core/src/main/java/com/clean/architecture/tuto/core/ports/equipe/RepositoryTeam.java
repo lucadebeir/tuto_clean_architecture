@@ -15,11 +15,11 @@ public interface RepositoryTeam {
 
     List<Team> getAll() throws UnknownHostException, SQLException;
 
-    Optional<Team> findById(String id) throws BusinessException, UnknownHostException, TechnicalException, SQLException;
+    Optional<Team> findByUuid(byte[] uuid) throws BusinessException, UnknownHostException, TechnicalException, SQLException;
 
     boolean existsByName(String name) throws UnknownHostException, SQLException;
 
-    void deleteById(String id);
+    void deleteByUuid(byte[] uuid);
 
     Team update(Team team) throws UnknownHostException, SQLException;
 }

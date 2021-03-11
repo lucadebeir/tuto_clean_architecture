@@ -14,9 +14,8 @@ import java.util.List;
 public class PersonEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+    @Column(name = "uuid", columnDefinition="BINARY(16)")
+    private byte[] uuid;
     @Column(name = "lastname")
     private String lastname;
     @Column(name = "firstname")

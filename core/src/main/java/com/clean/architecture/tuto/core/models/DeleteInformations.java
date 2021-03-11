@@ -10,14 +10,14 @@ import java.util.List;
 @Setter
 public class DeleteInformations {
 
-    private List<String> idsDeleted;
+    private List<byte[]> uuidsDeleted;
 
     public DeleteInformations() {
-        this.idsDeleted = new ArrayList<>();
+        this.uuidsDeleted = new ArrayList<>();
     }
 
-    public void addIdDeleted(String id) {
-        this.idsDeleted.add(id);
+    public void addUuidDeleted(byte[] uuid) {
+        this.uuidsDeleted.add(uuid);
     }
 
 }

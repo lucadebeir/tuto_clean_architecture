@@ -8,6 +8,7 @@ C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\models\Team.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\DeleteTeamUseCase.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\DisplayDetailsTeamUseCase.java
+C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\utils\Utils.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\use\cases\equipe\UpdateTeamUseCase.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\exceptions\BusinessException.java
 C:\Users\luca\IdeaProjects\tuto_clean_architecture\core\src\main\java\com\clean\architecture\tuto\core\ports\personne\RepositoryPerson.java
