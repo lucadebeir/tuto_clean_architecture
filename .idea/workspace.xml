@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="da486593-34f0-43f1-ab2a-cbfcecd950c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/src/main/java/com/clean/architecture/tuto/rest/endpoints/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/adapters/primaries/restAdapter/target/classes/com/clean/architecture/tuto/rest/endpoints/PersonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/data/interceptors/httperror.interceptor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/presentation/person/person-list/person-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +221,7 @@
       <workItem from="1614015813695" duration="2649000" />
       <workItem from="1614069554709" duration="21022000" />
       <workItem from="1614093568658" duration="136277000" />
-      <workItem from="1615278767740" duration="33243000" />
+      <workItem from="1615278767740" duration="34198000" />
     </task>
     <servers />
   </component>
@@ -289,38 +284,38 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="619" y="262" width="623" height="484" key="FileChooserDialogImpl/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1614694987772" />
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1615391575178">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
-    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1615391575177">
+    <state width="1637" height="253" key="GridCell.Tab.0.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.0.center" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
-    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1615391575177">
+    <state width="1637" height="253" key="GridCell.Tab.0.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.0.left" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
-    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1615391575177">
+    <state width="1637" height="253" key="GridCell.Tab.0.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.0.right" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575177" />
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1615391575178">
+    <state width="1637" height="253" key="GridCell.Tab.0.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
-    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1615391575178">
+    <state width="1637" height="253" key="GridCell.Tab.1.bottom/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.1.center" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
-    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1615391575178">
+    <state width="1637" height="253" key="GridCell.Tab.1.center/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.1.left" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
-    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1615391575178">
+    <state width="1637" height="253" key="GridCell.Tab.1.left/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right" timestamp="1615392201422">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615391575178" />
+    <state width="1637" height="253" key="GridCell.Tab.1.right/0.0.1680.1010/-1920.-21.1920.1040@0.0.1680.1010" timestamp="1615392201422" />
     <state width="1637" height="336" key="GridCell.Tab.2.bottom" timestamp="1614957422755">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -408,12 +403,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/app/data/repository/person-web-repository/person-web.repository.ts</url>
-          <line>37</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

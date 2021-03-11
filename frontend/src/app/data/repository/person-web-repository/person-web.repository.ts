@@ -32,6 +32,7 @@ export class PersonWebRepository extends PersonRepository {
     this.subscriptions.push(this.onlineEvent.subscribe(e => {
       console.log('Online...');
       this.online = true;
+      localStorage.clear(),
       console.log(this.sendToServer)
       setTimeout(() =>
       this.sendToServer.forEach(p => {
