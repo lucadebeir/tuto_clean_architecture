@@ -3,6 +3,7 @@ package com.clean.architecture.tuto.repojpa.entities;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,6 +17,11 @@ import java.util.List;
 public class TeamEntity {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column(name = "uuid")
     private String uuid;
     @Column(name = "name")

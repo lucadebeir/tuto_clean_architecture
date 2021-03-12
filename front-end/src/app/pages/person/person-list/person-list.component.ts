@@ -5,6 +5,7 @@ import {DialogComponent} from "../component/dialog/dialog.component";
 import {MatTableDataSource} from "@angular/material/table";
 import {Person} from "../../../models/person.model";
 import {PersonService} from "../../../services/person/person.service";
+import {OnlineOfflineService} from "../../../services/online-offline/online-offline.service";
 
 @Component({
   selector: 'app-person-list',
@@ -20,7 +21,8 @@ export class PersonListComponent implements OnInit {
   dataSource = new MatTableDataSource<Person>();
   displayedColumns: string[] = ['identifiant', 'firstname', 'lastname', 'age', 'update'];
 
-  constructor(private personService: PersonService ,private dialog: MatDialog) { }
+  constructor(private personService: PersonService, private dialog: MatDialog,
+              private readonly onlineOfflineService: OnlineOfflineService) { }
 
   ngOnInit(): void {
     this.refresh();
@@ -34,8 +36,8 @@ export class PersonListComponent implements OnInit {
 
   update(p: Person) {
     this.action = 'update';
-    if (p.id != null) {
-      this.personService.getPersonById(p.id).subscribe((value => {
+    if (p.uuid != null) {
+      this.personService.getPersonByUuid(p.uuid).subscribe((value => {
         this.person = {
           firstName: value.firstName,
           lastName: value.lastName,
@@ -67,13 +69,20 @@ export class PersonListComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
-      data => {
+      (data: Person) => {
         console.log("Dialog output:", data)
         if(this.action === 'creation') {
-          this.personService.create(data).subscribe(data => {
-            console.log(data)
-            this.refresh()
-          });
+          data.age = parseInt(String(data.age))
+          console.log(typeof data.age)
+          if(this.onlineOfflineService.isOnline) {
+            this.personService.create(data).subscribe(data => {
+              console.log(data)
+              this.refresh()
+            });
+          } else {
+            this.dataSource.data.push(data);
+            this.personService.addToIndexedDb(data).then(r => console.log(r));
+          }
         } else {
 
         }

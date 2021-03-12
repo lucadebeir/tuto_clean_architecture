@@ -12,7 +12,7 @@ export class DialogComponent implements OnInit {
 
   form!: FormGroup;
   person: Person = {
-    id: undefined,
+    uuid: undefined,
     firstName: "",
     lastName: "",
     age: 0,

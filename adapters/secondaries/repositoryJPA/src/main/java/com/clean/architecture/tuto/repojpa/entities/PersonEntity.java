@@ -1,6 +1,7 @@
 package com.clean.architecture.tuto.repojpa.entities;
 
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,6 +15,11 @@ import java.util.List;
 public class PersonEntity {
 
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
     @Column(name = "uuid")
     private String uuid;
     @Column(name = "lastname")

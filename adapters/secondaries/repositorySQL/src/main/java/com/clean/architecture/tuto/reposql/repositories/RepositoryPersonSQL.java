@@ -35,18 +35,19 @@ public class RepositoryPersonSQL extends AbstractRepositorySQL implements Reposi
     @Override
     public Person create(Person person) throws SQLException, UnsupportedEncodingException {
         String SQL_INSERT = "INSERT INTO person (uuid, lastname, firstname, age) VALUES (?,?,?,?)";
-        byte[] uuid = UUID.randomUUID().toString().getBytes("UTF-8");
+        if(person.getUuid().isEmpty()) {
+            byte[] uuid = UUID.randomUUID().toString().getBytes("UTF-8");
+            person.setUuid(Utils.getGuidFromByteArray(uuid));
+        }
 
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT);
-        preparedStatement.setString(1, Utils.getGuidFromByteArray(uuid));
+        preparedStatement.setString(1, person.getUuid());
         preparedStatement.setString(2, person.getLastName());
         preparedStatement.setString(3, person.getFirstName());
         preparedStatement.setInt(4, person.getAge());
 
         preparedStatement.executeUpdate();
-
-        person.setUuid(Utils.getGuidFromByteArray(uuid));
 
         return person;
     }
