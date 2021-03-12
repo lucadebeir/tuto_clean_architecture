@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 public class Team {
 
-    private byte[] uuid;
+    private String uuid;
     private String name;
     private List<Person> list;
 

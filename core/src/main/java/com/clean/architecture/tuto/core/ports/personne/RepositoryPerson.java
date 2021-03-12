@@ -15,11 +15,11 @@ public interface RepositoryPerson {
 
     List<Person> getAll() throws UnknownHostException, SQLException;
 
-    Optional<Person> findByUuid(byte[] id) throws TechnicalException, UnknownHostException, SQLException;
+    Optional<Person> findByUuid(String uuid) throws TechnicalException, UnknownHostException, SQLException;
 
     Person update(Person personToUpdate) throws UnknownHostException, SQLException;
 
-    void deleteByUuid(byte[] id) throws SQLException;
+    void deleteByUuid(String id) throws SQLException;
 
-    boolean existsByUuidPerson(byte[] s);
+    boolean existsByUuidPerson(String s);
 }

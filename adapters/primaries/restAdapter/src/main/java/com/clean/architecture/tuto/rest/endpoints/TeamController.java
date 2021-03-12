@@ -41,7 +41,7 @@ public class TeamController {
 
     @GetMapping("/{uuid}")
     public ResponseEntity<?> findById(@PathVariable("uuid") String uuid) throws TechnicalException, BusinessException {
-        Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(Utils.getByteArrayFromGuid(uuid));
+        Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(uuid);
         return optionalTeam.isPresent() ? new ResponseEntity<>(new ResponseApi<>(optionalTeam), HttpStatus.OK)
                 : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }

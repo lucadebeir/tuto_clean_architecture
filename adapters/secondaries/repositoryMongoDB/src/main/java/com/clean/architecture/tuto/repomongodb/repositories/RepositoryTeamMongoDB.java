@@ -47,12 +47,14 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
         try {
             while(cursor.hasNext()) {
                 DBObject obj = cursor.next();
-                Team team = Team.builder().uuid(Utils.getByteArrayFromGuid(String.valueOf(obj.get( "_id" ))))
+                Team team = Team.builder()
+                        .uuid(String.valueOf(obj.get( "_id" )))
                         .name(String.valueOf(obj.get("name")))
                         .build();
                 List<Person> people = new ArrayList<>();
                 for(DBObject person: (List<DBObject>) obj.get("list")) {
-                    people.add(Person.builder().uuid(Utils.getByteArrayFromGuid(String.valueOf(person.get("_id"))))
+                    people.add(Person.builder()
+                            .uuid(String.valueOf(person.get("_id")))
                             .firstName(String.valueOf(person.get("firstname")))
                             .lastName(String.valueOf(person.get("lastname")))
                             .age(Integer.parseInt(String.valueOf(person.get("age"))))
@@ -68,12 +70,12 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
     }
 
     @Override
-    public Optional<Team> findByUuid(byte[] uuid) throws TechnicalException {
+    public Optional<Team> findByUuid(String uuid) throws TechnicalException {
         BasicDBObject query = new BasicDBObject();
 
         //check is objectid is valid in mongodb
         try{
-            UUID.fromString(Utils.getGuidFromByteArray(uuid));
+            UUID.fromString(uuid);
             //do something
         } catch (IllegalArgumentException exception){
             //handle the case where string is not valid UUID
@@ -89,7 +91,8 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
                 .build();
         List<Person> people = new ArrayList<>();
         for(DBObject person: (List<DBObject>) value.get("list")) {
-            people.add(Person.builder().uuid(Utils.getByteArrayFromGuid(String.valueOf(person.get("_id"))))
+            people.add(Person.builder()
+                    .uuid(String.valueOf(person.get("_id")))
                     .firstName(String.valueOf(person.get("firstname")))
                     .lastName(String.valueOf(person.get("lastname")))
                     .age(Integer.parseInt(String.valueOf(person.get("age"))))
@@ -118,7 +121,7 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
     }
 
     @Override
-    public void deleteByUuid(byte[] uuid) {
+    public void deleteByUuid(String uuid) {
 
     }
 

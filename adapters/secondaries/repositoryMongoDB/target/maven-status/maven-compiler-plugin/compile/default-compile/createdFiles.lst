@@ -1,6 +1,0 @@
-com\clean\architecture\tuto\repomongodb\repositories\AbstractRepositoryMongoDB.class
-com\clean\architecture\tuto\repomongodb\config\Config$SingletonMongoDB.class
-com\clean\architecture\tuto\repomongodb\config\Config.class
-com\clean\architecture\tuto\repomongodb\repositories\RepositoryTeamMongoDB.class
-com\clean\architecture\tuto\repomongodb\config\Config$ConfigBuilder.class
-com\clean\architecture\tuto\repomongodb\repositories\RepositoryPersonMongoDB.class

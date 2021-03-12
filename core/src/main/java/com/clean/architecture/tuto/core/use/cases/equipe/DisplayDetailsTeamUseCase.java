@@ -18,8 +18,8 @@ public class DisplayDetailsTeamUseCase {
 
     private RepositoryTeam repository; //interface
 
-    public Optional<Team> execute(byte[] uuid) throws BusinessException, TechnicalException {
-        if(Objects.isNull(uuid) || uuid.length == 0) {
+    public Optional<Team> execute(String uuid) throws BusinessException, TechnicalException {
+        if(Objects.isNull(uuid) || uuid.isEmpty()) {
             throw new BusinessException("L'uuid d'une équipe est obligatoire");
         }
 

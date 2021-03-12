@@ -1,6 +1,0 @@
-com\clean\architecture\tuto\rest\config\UsesCasesCfg.class
-com\clean\architecture\tuto\rest\config\GeneralException.class
-com\clean\architecture\tuto\rest\models\ResponseApi.class
-com\clean\architecture\tuto\rest\endpoints\TeamController.class
-com\clean\architecture\tuto\rest\endpoints\PersonController.class
-com\clean\architecture\tuto\rest\Application.class

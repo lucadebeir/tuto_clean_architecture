@@ -30,8 +30,7 @@ public class CreatePersonUseCaseTest {
     //constructeur pour les tests, variables communes à tous les tests
     @Before
     public void setUp() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-        this.personToCreate = new Person(uuid,"Luca", "Debeir", 25);
+        this.personToCreate = new Person("123e4567-e89b-12d3-a456-556642440000","Luca", "Debeir", 25);
         this.useCase = new CreatePersonUseCase(repository);
     }
 
@@ -44,7 +43,7 @@ public class CreatePersonUseCaseTest {
         Person person = this.useCase.execute(personToCreate);
         Assertions.assertThat(person).isNotNull();
         Assertions.assertThat(person.getUuid()).isNotNull();
-        Assertions.assertThat(Utils.getGuidFromByteArray(person.getUuid())).isEqualTo("123e4567-e89b-12d3-a456-556642440000");
+        Assertions.assertThat(person.getUuid()).isEqualTo("123e4567-e89b-12d3-a456-556642440000");
         Assertions.assertThat(person.getFirstName()).isEqualTo("Debeir");
         Assertions.assertThat(person.getLastName()).isEqualTo("Luca");
         Assertions.assertThat(person.getAge()).isEqualTo(25);

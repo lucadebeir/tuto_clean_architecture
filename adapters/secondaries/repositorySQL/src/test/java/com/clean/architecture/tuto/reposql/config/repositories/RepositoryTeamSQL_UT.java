@@ -92,7 +92,7 @@ public class RepositoryTeamSQL_UT {
 
     @Test
     public void find_by_id_should_return_empty_optional_when_id_is_unknown() throws SQLException {
-        Assertions.assertThat(this.repositoryTeam.findByUuid(Utils.getByteArrayFromGuid("99999"))).isNotPresent();
+        Assertions.assertThat(this.repositoryTeam.findByUuid("99999")).isNotPresent();
     }
 
     @Test

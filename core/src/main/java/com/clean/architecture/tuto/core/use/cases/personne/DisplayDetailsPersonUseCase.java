@@ -18,8 +18,8 @@ public class DisplayDetailsPersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-    public Optional<Person> execute(byte[] uuid) throws BusinessException, TechnicalException {
-        if(Objects.isNull(uuid) || uuid.length == 0) {
+    public Optional<Person> execute(String uuid) throws BusinessException, TechnicalException {
+        if(Objects.isNull(uuid) || uuid.isEmpty()) {
             throw new BusinessException("L'uuid d'une personne est obligatoire");
         }
         try {

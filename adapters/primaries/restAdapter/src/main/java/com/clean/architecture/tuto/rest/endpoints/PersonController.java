@@ -54,7 +54,7 @@ public class PersonController {
     @GetMapping("/{uuid}")
     @ResponseBody
     public ResponseEntity<?> findById(@PathVariable("uuid") String uuid) throws TechnicalException, BusinessException {
-        Optional<Person> optionalPerson = this.displayDetailsPersonUseCase.execute(Utils.getByteArrayFromGuid(uuid));
+        Optional<Person> optionalPerson = this.displayDetailsPersonUseCase.execute(uuid);
         return optionalPerson.isPresent() ? new ResponseEntity<>(new ResponseApi<>(optionalPerson), HttpStatus.OK)
                                           : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }
@@ -72,7 +72,7 @@ public class PersonController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteById(@PathVariable("uuid") String uuid) throws SQLException, UnknownHostException, TechnicalException, BusinessException {
-        return new ResponseEntity<>(new ResponseApi<>(this.deletePersonUseCase.execute(Utils.getByteArrayFromGuid(uuid))), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseApi<>(this.deletePersonUseCase.execute(uuid)), HttpStatus.OK);
     }
 
 

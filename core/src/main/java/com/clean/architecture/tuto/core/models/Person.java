@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 public class Person {
 
-    private byte[] uuid;
+    private String uuid;
     private String lastName;
     private String firstName;
     private Integer age;

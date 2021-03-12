@@ -19,17 +19,17 @@ public class DeleteTeamUseCase {
 
     private RepositoryTeam repository;
 
-    public void execute(byte[] uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+    public void execute(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
         isDeletable(uuid);
         repository.deleteByUuid(uuid);
     }
 
-    private void isDeletable(byte[] uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
-        if(Objects.isNull(uuid) || uuid.length == 0) {
+    private void isDeletable(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+        if(Objects.isNull(uuid) || uuid.isEmpty()) {
             throw new BusinessException("L'uuid d'une personne est obligatoire");
         } else {
             this.repository.findByUuid(uuid)
-                    .orElseThrow(() -> new BusinessException("L'identifiant "+ Utils.getGuidFromByteArray(uuid) + " n'existe pas", Collections.singletonList("L'identifiant "+ UUID.nameUUIDFromBytes(uuid).toString() + " n'existe pas")));
+                    .orElseThrow(() -> new BusinessException("L'identifiant "+ uuid + " n'existe pas", Collections.singletonList("L'identifiant "+ uuid + " n'existe pas")));
 
         }
     }

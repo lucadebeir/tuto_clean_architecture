@@ -30,9 +30,8 @@ public class UpdatePersonUseCaseTest {
     //constructeur pour les tests, variables communes à tous les tests
     @Before
     public void setUp() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
         this.personToUpdate = Person.builder()
-                .uuid(uuid)
+                .uuid("123e4567-e89b-12d3-a456-556642440000")
                 .lastName("Debeir")
                 .firstName("Luca")
                 .age(25)

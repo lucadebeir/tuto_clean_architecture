@@ -37,10 +37,8 @@ public class DeleteTeamUseCaseTest {
 
     @Test
     public void should_throw_business_exception_when_id_not_exist_in_db() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-
         Assertions.assertThatCode(() -> {
-            this.useCase.execute(uuid);
+            this.useCase.execute("123e4567-e89b-12d3-a456-556642440000");
         }).isInstanceOf(BusinessException.class)
                 .hasMessage("L'identifiant 123e4567-e89b-12d3-a456-556642440000 n'existe pas");
     }

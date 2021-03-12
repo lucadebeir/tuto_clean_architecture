@@ -21,11 +21,11 @@ public class UsesCasesCfg {
 
     @Bean
     public RepositoryPerson repositoryPerson()  {
-        return new RepositoryPersonSQL();
+        return new RepositoryPersonJPA();
     }
     @Bean
     public RepositoryTeam repositoryTeam()  {
-        return new RepositoryTeamSQL();
+        return new RepositoryTeamJPA();
     }
 
     //PERSON

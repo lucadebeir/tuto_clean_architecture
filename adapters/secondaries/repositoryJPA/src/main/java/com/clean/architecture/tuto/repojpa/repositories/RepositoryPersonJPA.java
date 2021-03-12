@@ -65,7 +65,7 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
     }
 
     @Override
-    public Optional<Person> findByUuid(byte[] uuid) {
+    public Optional<Person> findByUuid(String uuid) {
         Person person = null;
 
         try {
@@ -98,12 +98,12 @@ public class RepositoryPersonJPA extends AbstractRepositoryJPA implements Reposi
     }
 
     @Override
-    public void deleteByUuid(byte[] uuid) throws SQLException {
+    public void deleteByUuid(String uuid) throws SQLException {
 
     }
 
     @Override
-    public boolean existsByUuidPerson(byte[] s) {
+    public boolean existsByUuidPerson(String s) {
         return false;
     }
 }

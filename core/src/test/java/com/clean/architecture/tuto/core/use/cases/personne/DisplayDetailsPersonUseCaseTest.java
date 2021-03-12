@@ -32,9 +32,7 @@ public class DisplayDetailsPersonUseCaseTest {
     //constructeur pour les tests, variables communes à tous les tests
     @Before
     public void setUp() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-
-        this.personToDisplay = new Person(uuid, "Luca", "Debeir", 25);
+        this.personToDisplay = new Person("123e4567-e89b-12d3-a456-556642440000", "Luca", "Debeir", 25);
         this.useCase = new DisplayDetailsPersonUseCase(repository);
     }
 
@@ -45,7 +43,7 @@ public class DisplayDetailsPersonUseCaseTest {
         Assertions.assertThat(optPerson).isNotNull();
         Assertions.assertThat(optPerson).isPresent();
         optPerson.ifPresent(person -> {
-            Assertions.assertThat(Utils.getGuidFromByteArray(person.getUuid())).isEqualTo(Utils.getGuidFromByteArray(Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000")));
+            Assertions.assertThat(person.getUuid()).isEqualTo("123e4567-e89b-12d3-a456-556642440000");
             Assertions.assertThat(person.getFirstName()).isEqualTo("Debeir");
             Assertions.assertThat(person.getLastName()).isEqualTo("Luca");
             Assertions.assertThat(person.getAge()).isEqualTo(25);
@@ -53,12 +51,10 @@ public class DisplayDetailsPersonUseCaseTest {
     }
 
     @Test
-    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException, SQLException, UnsupportedEncodingException {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-
-        Mockito.when(this.repository.findByUuid(uuid))
+    public void should_return_optional_empty_when_id_doesnt_exist_in_db() throws BusinessException, TechnicalException, UnknownHostException, SQLException {
+        Mockito.when(this.repository.findByUuid("123e4567-e89b-12d3-a456-556642440000"))
                 .thenReturn(Optional.empty());
-        Optional<Person> optPerson = this.useCase.execute(uuid);
+        Optional<Person> optPerson = this.useCase.execute("123e4567-e89b-12d3-a456-556642440000");
         Assertions.assertThat(optPerson).isNotPresent();
     }
 

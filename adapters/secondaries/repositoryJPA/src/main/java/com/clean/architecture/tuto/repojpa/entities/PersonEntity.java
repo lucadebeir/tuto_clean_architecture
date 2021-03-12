@@ -14,8 +14,8 @@ import java.util.List;
 public class PersonEntity {
 
     @Id
-    @Column(name = "uuid", columnDefinition="BINARY(16)")
-    private byte[] uuid;
+    @Column(name = "uuid")
+    private String uuid;
     @Column(name = "lastname")
     private String lastname;
     @Column(name = "firstname")
@@ -26,8 +26,8 @@ public class PersonEntity {
     //@ManyToMany(mappedBy = "personsList")
     @ManyToMany
     @JoinTable( name = "bepartof",
-            joinColumns = @JoinColumn( name = "idPerson" ),
-            inverseJoinColumns = @JoinColumn( name = "idTeam" ) )
+            joinColumns = @JoinColumn( name = "uuidPerson" ),
+            inverseJoinColumns = @JoinColumn( name = "uuidTeam" ) )
     private List<TeamEntity> teamsList = new ArrayList<>();
 
 }

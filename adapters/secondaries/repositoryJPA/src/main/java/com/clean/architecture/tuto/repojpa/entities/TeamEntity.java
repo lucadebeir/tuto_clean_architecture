@@ -16,16 +16,16 @@ import java.util.List;
 public class TeamEntity {
 
     @Id
-    @Column(name = "uuid", columnDefinition="BINARY(16)")
-    private byte[] uuid;
+    @Column(name = "uuid")
+    private String uuid;
     @Column(name = "name")
     private String name;
 
     @ManyToMany
     @JoinTable(
             name = "bepartof",
-            joinColumns = @JoinColumn(name = "idTeam"),
-            inverseJoinColumns = @JoinColumn(name = "idPerson")
+            joinColumns = @JoinColumn(name = "uuidTeam"),
+            inverseJoinColumns = @JoinColumn(name = "uuidPerson")
     )
     private List<PersonEntity> personsList = new ArrayList<>();
 

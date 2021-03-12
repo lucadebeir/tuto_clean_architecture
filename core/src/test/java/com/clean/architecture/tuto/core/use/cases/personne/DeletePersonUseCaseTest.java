@@ -36,12 +36,10 @@ public class DeletePersonUseCaseTest {
 
     @Test
     public void should_success_when_id_not_exist_in_db() throws TechnicalException, SQLException, UnknownHostException, BusinessException {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
+        Mockito.when(this.repository.findByUuid("123e4567-e89b-12d3-a456-556642440000"))
+                .thenReturn(Optional.of(new Person("123e4567-e89b-12d3-a456-556642440000", "Toto", "Tata", 8)));
 
-        Mockito.when(this.repository.findByUuid(uuid))
-                .thenReturn(Optional.of(new Person(uuid, "Toto", "Tata", 8)));
-
-        DeleteInformations di = this.useCase.execute(uuid);
+        DeleteInformations di = this.useCase.execute("123e4567-e89b-12d3-a456-556642440000");
 
         Assertions.assertThat(di).isNotNull();
         Assertions.assertThat(di.getUuidsDeleted()).isNotEmpty();
@@ -51,22 +49,18 @@ public class DeletePersonUseCaseTest {
 
     @Test
     public void should_throw_business_exception_when_id_not_exist_in_db() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-
         Assertions.assertThatCode(() -> {
-                    this.useCase.execute(uuid);
+                    this.useCase.execute("123e4567-e89b-12d3-a456-556642440000");
          }).isInstanceOf(BusinessException.class)
           .hasMessage("L'identifiant 123e4567-e89b-12d3-a456-556642440000 n'existe pas");
     }
 
     @Test
     public void should_throw_business_exception_when_id_use_in_team() {
-        byte[] uuid = Utils.getByteArrayFromGuid("123e4567-e89b-12d3-a456-556642440000");
-
-        Mockito.when(this.repository.existsByUuidPerson(uuid)).thenAnswer(i -> true);
+        Mockito.when(this.repository.existsByUuidPerson("123e4567-e89b-12d3-a456-556642440000")).thenAnswer(i -> true);
 
         Assertions.assertThatCode(() -> {
-            this.useCase.execute(uuid);
+            this.useCase.execute("123e4567-e89b-12d3-a456-556642440000");
         }).hasMessage("Cette personne fait partie d'une équipe de 6 joueurs, il ne peut pas la quitter, car une équipe doit être composée de 6 joueurs au minimum.").isInstanceOf(BusinessException.class);
 
     }

@@ -20,7 +20,7 @@ public class DeletePersonUseCase {
 
     private RepositoryPerson repository; //interface
 
-    public DeleteInformations execute(byte[] uuid) throws BusinessException, SQLException, TechnicalException, UnknownHostException {
+    public DeleteInformations execute(String uuid) throws BusinessException, SQLException, TechnicalException, UnknownHostException {
 
         DeleteInformations result = new DeleteInformations();
 
@@ -31,8 +31,8 @@ public class DeletePersonUseCase {
         return result;
     }
 
-    private void isDeletable(byte[] uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
-        if(Objects.isNull(uuid) || uuid.length == 0) {
+    private void isDeletable(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+        if(Objects.isNull(uuid) || uuid.isEmpty()) {
             throw new BusinessException("L'uuid d'une personne est obligatoire", Collections.singletonList("L'uuid d'une personne est obligatoire"));
         } else {
 
@@ -41,7 +41,7 @@ public class DeletePersonUseCase {
             }
 
             this.repository.findByUuid(uuid)
-                    .orElseThrow(() -> new BusinessException("L'identifiant "+ Utils.getGuidFromByteArray(uuid) + " n'existe pas", Collections.singletonList("L'identifiant "+ UUID.nameUUIDFromBytes(uuid).toString() + " n'existe pas")));
+                    .orElseThrow(() -> new BusinessException("L'identifiant "+ uuid + " n'existe pas", Collections.singletonList("L'identifiant "+ uuid + " n'existe pas")));
 
         }
     }

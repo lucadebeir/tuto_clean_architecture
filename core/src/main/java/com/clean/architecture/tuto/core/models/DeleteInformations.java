@@ -10,13 +10,13 @@ import java.util.List;
 @Setter
 public class DeleteInformations {
 
-    private List<byte[]> uuidsDeleted;
+    private List<String> uuidsDeleted;
 
     public DeleteInformations() {
         this.uuidsDeleted = new ArrayList<>();
     }
 
-    public void addUuidDeleted(byte[] uuid) {
+    public void addUuidDeleted(String uuid) {
         this.uuidsDeleted.add(uuid);
     }
 

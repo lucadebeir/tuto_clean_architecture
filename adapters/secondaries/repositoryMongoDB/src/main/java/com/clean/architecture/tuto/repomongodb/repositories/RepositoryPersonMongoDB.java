@@ -35,7 +35,7 @@ public class RepositoryPersonMongoDB extends AbstractRepositoryMongoDB implement
         Cursor cursor = collection.find();
         while(cursor.hasNext()) {
             DBObject value = cursor.next();
-            list.add(new Person((byte[]) value.get("_id"),
+            list.add(new Person(String.valueOf(value.get("_id")),
                     String.valueOf(value.get("firstname")),
                     String.valueOf(value.get("lastname")),
                     Integer.parseInt(String.valueOf(value.get("age")))));
@@ -44,12 +44,12 @@ public class RepositoryPersonMongoDB extends AbstractRepositoryMongoDB implement
     }
 
     @Override
-    public Optional<Person> findByUuid(byte[] uuid) throws TechnicalException {
+    public Optional<Person> findByUuid(String uuid) throws TechnicalException {
         BasicDBObject query = new BasicDBObject();
 
         //check is objectid is valid in mongodb
         try{
-            UUID.fromString(Utils.getGuidFromByteArray(uuid));
+            UUID.fromString(uuid);
             //do something
         } catch (IllegalArgumentException exception){
             //handle the case where string is not valid UUID
@@ -72,12 +72,12 @@ public class RepositoryPersonMongoDB extends AbstractRepositoryMongoDB implement
     }
 
     @Override
-    public void deleteByUuid(byte[] uuid) throws SQLException {
+    public void deleteByUuid(String uuid) throws SQLException {
 
     }
 
     @Override
-    public boolean existsByUuidPerson(byte[] s) {
+    public boolean existsByUuidPerson(String s) {
         return false;
     }
 

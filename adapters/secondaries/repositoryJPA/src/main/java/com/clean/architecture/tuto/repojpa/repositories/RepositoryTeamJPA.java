@@ -73,7 +73,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
     }
 
     @Override
-    public Optional<Team> findByUuid(byte[] uuid) {
+    public Optional<Team> findByUuid(String uuid) {
         Team team = null;
 
         try {
@@ -117,7 +117,7 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
     }
 
     @Override
-    public void deleteByUuid(byte[] uuid) {
+    public void deleteByUuid(String uuid) {
 
     }
 
