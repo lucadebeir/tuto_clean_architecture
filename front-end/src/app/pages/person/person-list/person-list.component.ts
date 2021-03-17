@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable, of} from "rxjs";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {DialogComponent} from "../component/dialog/dialog.component";
 import {MatTableDataSource} from "@angular/material/table";
 import {Person} from "../../../models/person.model";
 import {PersonService} from "../../../services/person/person.service";
 import {OnlineOfflineService} from "../../../services/online-offline/online-offline.service";
+import * as localforage from "localforage";
 
 @Component({
   selector: 'app-person-list',
@@ -14,7 +14,6 @@ import {OnlineOfflineService} from "../../../services/online-offline/online-offl
 })
 export class PersonListComponent implements OnInit {
 
-  allPersons$: Observable<Person[]> | undefined;
   person!: Person;
   action: string = '';
 
@@ -28,24 +27,39 @@ export class PersonListComponent implements OnInit {
     this.refresh();
   }
 
-  refresh() {
-    this.personService.getAllPersons().subscribe(data => {
-      this.dataSource.data = data;
-    });
+  async refresh() {
+    if(!this.onlineOfflineService.isOnline) {
+      this.dataSource.data = await localforage.getItem('persons');
+    } else {
+      this.personService.getAllPersons().subscribe(data => {
+        this.dataSource.data = data;
+      });
+    }
+    console.log(this.dataSource.data)
   }
 
-  update(p: Person) {
+  async update(p: Person) {
+    console.log(p)
     this.action = 'update';
     if (p.uuid != null) {
-      this.personService.getPersonByUuid(p.uuid).subscribe((value => {
-        this.person = {
-          firstName: value.firstName,
-          lastName: value.lastName,
-          age: value.age
-        };
-        this.openDialog()
-      }))
+      if (this.onlineOfflineService.isOnline) {
+        this.personService.getPersonByUuid(p.uuid).subscribe((value => {
+          this.person = value;
+        }));
+      } else {
+        this.person = await this.personService.getPersonByUuidFromLocalForage(p.uuid);
+      }
+      setTimeout(() => this.openDialog(), 100);
     }
+  }
+
+  delete(p: Person) {
+    if (this.onlineOfflineService.isOnline) {
+      this.personService.delete(p.uuid);
+    } else {
+      this.personService.deleteFromLocalForage(p.uuid);
+    }
+    setTimeout(() => this.refresh(), 100);
   }
 
   create() {
@@ -60,32 +74,34 @@ export class PersonListComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
-        firstName: this.action === 'update' ? this.person.firstName : '',
-        lastName: this.action === 'update' ? this.person.lastName : '',
-        age: this.action === 'update' ? this.person.age : '',
-        title: this.action === 'update' ? "Modifier une personne" : "Créer une personne"
-      };
+      uuid: this.action === 'update' ? this.person.uuid : '',
+      firstName: this.action === 'update' ? this.person.firstName : '',
+      lastName: this.action === 'update' ? this.person.lastName : '',
+      age: this.action === 'update' ? this.person.age : '',
+      title: this.action === 'update' ? "Modifier une personne" : "Créer une personne"
+    };
 
     const dialogRef = this.dialog.open(DialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(
       (data: Person) => {
-        console.log("Dialog output:", data)
+        console.log("Dialog output:", data);
         if(this.action === 'creation') {
-          data.age = parseInt(String(data.age))
-          console.log(typeof data.age)
-          if(this.onlineOfflineService.isOnline) {
-            this.personService.create(data).subscribe(data => {
-              console.log(data)
-              this.refresh()
-            });
+          if (this.onlineOfflineService.isOnline) {
+            this.personService.create(data).subscribe();
           } else {
             this.dataSource.data.push(data);
-            this.personService.addToIndexedDb(data).then(r => console.log(r));
+            this.personService.addToLocalForage(data);
           }
         } else {
-
+          if (this.onlineOfflineService.isOnline) {
+            this.personService.update(data).subscribe();
+          } else {
+            this.dataSource.data.push(data);
+            this.personService.updateFromLocalForage(data);
+          }
         }
+        setTimeout(() => this.refresh(), 100);
       }
     );
   }

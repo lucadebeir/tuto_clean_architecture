@@ -34,11 +34,13 @@ public class TeamController {
         this.findByIdTeamUseCase = findByIdTeamUseCase;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/add")
     public ResponseEntity<?> create(@RequestBody Team team) throws TechnicalException, BusinessException {
         return new ResponseEntity<>(new ResponseApi<>(this.createTeamUseCase.execute(team)), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{uuid}")
     public ResponseEntity<?> findById(@PathVariable("uuid") String uuid) throws TechnicalException, BusinessException {
         Optional<Team> optionalTeam = this.findByIdTeamUseCase.execute(uuid);
@@ -46,6 +48,7 @@ public class TeamController {
                 : new ResponseEntity<>(new ResponseApi<>(Collections.singletonList("Inconnu")), HttpStatus.NOT_FOUND);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all")
     public ResponseEntity<?> findAll() {
         try {

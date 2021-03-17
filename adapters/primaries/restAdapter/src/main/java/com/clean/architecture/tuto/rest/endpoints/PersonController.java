@@ -65,12 +65,14 @@ public class PersonController {
         return new ResponseEntity<>(new ResponseApi<>(this.createPersonUseCase.execute(person)), HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/update")
     public ResponseEntity<?> update(@RequestBody Person person) throws TechnicalException, BusinessException, SQLException, UnknownHostException {
         return new ResponseEntity<>(new ResponseApi<>(this.updatePersonUseCase.execute(person)), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    @DeleteMapping("/{uuid}")
     public ResponseEntity<?> deleteById(@PathVariable("uuid") String uuid) throws SQLException, UnknownHostException, TechnicalException, BusinessException {
         return new ResponseEntity<>(new ResponseApi<>(this.deletePersonUseCase.execute(uuid)), HttpStatus.OK);
     }

@@ -12,7 +12,7 @@ export class DialogComponent implements OnInit {
 
   form!: FormGroup;
   person: Person = {
-    uuid: undefined,
+    uuid: "",
     firstName: "",
     lastName: "",
     age: 0,
@@ -21,7 +21,8 @@ export class DialogComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private dialogRef: MatDialogRef<DialogComponent>,
-              @Inject(MAT_DIALOG_DATA) {firstName, lastName, age, title}: any) {
+              @Inject(MAT_DIALOG_DATA) {uuid, firstName, lastName, age, title}: any) {
+    this.person.uuid = uuid;
     this.person.firstName = firstName;
     this.person.lastName = lastName;
     this.person.age = age;
@@ -42,7 +43,10 @@ export class DialogComponent implements OnInit {
   }
 
   save(): void {
-    this.dialogRef.close(this.form.value);
+    this.person.firstName = this.form.value.firstName;
+    this.person.lastName = this.form.value.lastName;
+    this.person.age = parseInt(String(this.form.value.age));
+    this.dialogRef.close(this.person);
   }
 
   close(): void {

@@ -9,16 +9,18 @@ import {PersonModule} from "./pages/person/person.module";
 import {HttpErrorInterceptor} from "./configurations/interceptors/httperror.interceptor";
 import {MaterialModule} from "./configurations/material.module";
 import {HttpConfigInterceptor} from "./configurations/interceptors/httpconfig.interceptor";
+import {TeamModule} from "./pages/team/team.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     PersonModule,
+    TeamModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],
