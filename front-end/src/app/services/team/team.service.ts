@@ -8,6 +8,7 @@ import {ResponseApiWrapper} from "../../configurations/mapper/response-api-wrapp
 import {map} from "rxjs/operators";
 import {ResponseApi} from "../../models/response-api.model";
 import {Person} from "../../models/person.model";
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,13 @@ export class TeamService {
     });
   }
 
-  create(data: Person) {
-    
+  create(team: Team): Observable<Team> {
+    team.uuid === undefined ? team.uuid = uuidv4() : null;
+    return this.http
+      .post<ResponseApi<Team>>('http://localhost:8080/api/team/add', team)
+      .pipe(map( (value: ResponseApi<Team>) => {
+        console.log(value)
+        return this.mapper.mapFrom(value);
+      }));
   }
 }

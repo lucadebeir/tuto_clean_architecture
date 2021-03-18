@@ -34,14 +34,13 @@ export class TeamListComponent implements OnInit {
     this.refresh();
 
     this.personService.getAllPersons().subscribe(persons => {
-      this.allPersons = persons;
+      /*for(let i = 0; i < persons.length; i++) {
+        persons[i].checked = false;
+      }*/
       persons.forEach(person => {
-        this.list.push({
-          person: person,
-          name: person.firstName + " " + person.lastName,
-          checked: false
-        })
-      })
+        person.checked = false;
+      });
+      setTimeout(() => { this.allPersons = persons }, 1000);
     })
   }
 
@@ -65,18 +64,19 @@ export class TeamListComponent implements OnInit {
   }
 
   update(element: Team) {
+    console.log(element)
     this.team = element;
     this.action = 'update';
-    this.list.forEach(data => {
-      console.log(element.list.indexOf(data.person))
+    this.allPersons.forEach(data => {
       data.checked = (element.list.indexOf(data) !== -1)
     })
+    console.log(this.allPersons)
     setTimeout(() => this.openDialog(), 100)
   }
 
   create() {
     console.log(this.list)
-    this.action = 'create';
+    this.action = 'creation';
     this.openDialog();
   }
 
@@ -89,8 +89,7 @@ export class TeamListComponent implements OnInit {
     dialogConfig.data = {
       uuid: this.action === 'update' ? this.team.uuid : '',
       name: this.action === 'update' ? this.team.name : '',
-      list: this.action === 'update' ? this.team.list : [],
-      listCheckbox: this.list,
+      list: this.allPersons,
       title: this.action === 'update' ? "Modifier une équipe" : "Créer une équipe"
     };
 
@@ -101,7 +100,7 @@ export class TeamListComponent implements OnInit {
         console.log("Dialog output:", data);
         if(this.action === 'creation') {
           if (this.onlineOfflineService.isOnline) {
-            //this.teamService.create(data).subscribe();
+            this.teamService.create(data).subscribe(data => console.log(data));
           } else {
             this.dataSource.data.push(data);
             //this.teamService.addToLocalForage(data);
@@ -114,7 +113,7 @@ export class TeamListComponent implements OnInit {
             //this.personService.updateFromLocalForage(data);
           }
         }
-        setTimeout(() => this.refresh(), 100);
+        //setTimeout(() => this.refresh(), 100);
       }
     );
   }

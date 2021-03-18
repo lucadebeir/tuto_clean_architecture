@@ -25,7 +25,7 @@ public class UsesCasesCfg {
     }
     @Bean
     public RepositoryTeam repositoryTeam()  {
-        return new RepositoryTeamJPA();
+        return new RepositoryTeamSQL();
     }
 
     //PERSON

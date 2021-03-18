@@ -19,17 +19,17 @@ export class DialogComponent implements OnInit {
     name: "",
     list: []
   };
-  list: any[] = [];
+  list: Person[] = [];
   title: string = "";
 
   constructor(private personService: PersonService,
               private fb: FormBuilder,
               private dialogRef: MatDialogRef<DialogComponent>,
-              @Inject(MAT_DIALOG_DATA) {uuid, name, list, listCheckbox, title}: any) {
+              @Inject(MAT_DIALOG_DATA) {uuid, name, list, title}: any) {
     this.team.uuid = uuid;
     this.team.name = name;
     this.team.list = list;
-    this.list = listCheckbox;
+    this.list = list;
     this.title = title;
 
     this.form = new FormGroup({
@@ -48,22 +48,14 @@ export class DialogComponent implements OnInit {
   }
 
   private addCheckboxes() {
-    this.list.forEach((person) => this.listFormArray.push(new FormControl(person.checked)))
-  }
-
-  private initFormArray(): void {
-    const formArray = this.form.get('list') as FormArray;
-    this.list.forEach(person => {
-      formArray.push(new FormGroup({
-        name: new FormControl(person.name),
-        checked: new FormControl(person.checked)
-      }))
-    })
+    this.list.forEach((person) => this.listFormArray.push(new FormControl(person.checked)));
   }
 
   save(): void {
     this.team.name = this.form.value.name;
-    this.team.list= this.form.value.list.filter(f => f.checked);
+    this.team.list = this.form.value.list
+      .map((checked, i) => checked ? this.team.list[i] : null)
+      .filter(v => v !== null);
     this.dialogRef.close(this.team);
   }
 
