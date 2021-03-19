@@ -36,7 +36,7 @@
 
                     list.forEach(element -> {
                         try {
-                            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(Utils.getByteArrayFromGuid(element));
+                            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(element);
                             optionalPerson.ifPresent(person -> personList.add(person));
                         } catch (BusinessException e) {
                             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));
@@ -81,7 +81,7 @@
                 System.out.println("Uuid : ");
                 String uuid = in.nextLine();
 
-                Optional<Team> optionalTeam = Config.findByIdTeamUseCase().execute(Utils.getByteArrayFromGuid(uuid));
+                Optional<Team> optionalTeam = Config.findByIdTeamUseCase().execute(uuid);
 
                 optionalTeam.ifPresent(team -> {
                     System.out.println("Nom de l'equipe : " + team.getName());

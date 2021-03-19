@@ -20,7 +20,6 @@ export class TeamListComponent implements OnInit {
   team!: Team;
   action: string = '';
   toDisplay: Person[] = [];
-  list: any[] = [];
   allPersons: Person[] = [];
 
   dataSource = new MatTableDataSource<Team>();
@@ -34,48 +33,54 @@ export class TeamListComponent implements OnInit {
     this.refresh();
 
     this.personService.getAllPersons().subscribe(persons => {
-      /*for(let i = 0; i < persons.length; i++) {
-        persons[i].checked = false;
-      }*/
-      persons.forEach(person => {
-        person.checked = false;
+      this.allPersons = persons.map(item => {
+        item.checked = false;
+        return item;
       });
-      setTimeout(() => { this.allPersons = persons }, 1000);
     })
   }
 
   async refresh() {
     if(!this.onlineOfflineService.isOnline) {
       this.dataSource.data = await localforage.getItem('teams');
+      this.allPersons = await localforage.getItem('persons');
     } else {
       this.teamService.getAllTeams().subscribe(data => {
         this.dataSource.data = data;
       });
+      this.personService.getAllPersons().subscribe(persons => {
+        this.allPersons = persons.map(item => {
+          item.checked = false;
+          return item;
+        });
+      });
     }
-    console.log(this.dataSource.data)
   }
 
   display(element: Team) {
     this.toDisplay = this.toDisplay.length === 0 ? element.list : [];
   }
 
-  delete(element: any) {
-
+  delete(element: Team) {
+    if (this.onlineOfflineService.isOnline) {
+      this.teamService.delete(element.uuid);
+    } else {
+      this.teamService.deleteFromLocalForage(element.uuid);
+    }
+    setTimeout(() => this.refresh(), 100);
   }
 
   update(element: Team) {
-    console.log(element)
     this.team = element;
     this.action = 'update';
-    this.allPersons.forEach(data => {
-      data.checked = (element.list.indexOf(data) !== -1)
-    })
-    console.log(this.allPersons)
-    setTimeout(() => this.openDialog(), 100)
+    this.allPersons = this.allPersons.map(item => {
+      item.checked = !!element.list.find(person => person.uuid === item.uuid);
+      return item;
+    });
+    this.openDialog();
   }
 
   create() {
-    console.log(this.list)
     this.action = 'creation';
     this.openDialog();
   }
@@ -98,22 +103,24 @@ export class TeamListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(
       (data: Person) => {
         console.log("Dialog output:", data);
-        if(this.action === 'creation') {
-          if (this.onlineOfflineService.isOnline) {
-            this.teamService.create(data).subscribe(data => console.log(data));
+        if(data) {
+          if(this.action === 'creation') {
+            if (this.onlineOfflineService.isOnline) {
+              this.teamService.create(data).subscribe(data => console.log(data));
+            } else {
+              this.dataSource.data.push(data);
+              this.teamService.addToLocalForage(data);
+            }
           } else {
-            this.dataSource.data.push(data);
-            //this.teamService.addToLocalForage(data);
-          }
-        } else {
-          if (this.onlineOfflineService.isOnline) {
-            //this.personService.update(data).subscribe();
-          } else {
-            this.dataSource.data.push(data);
-            //this.personService.updateFromLocalForage(data);
+            if (this.onlineOfflineService.isOnline) {
+              this.teamService.update(data).subscribe();
+            } else {
+              this.dataSource.data.push(data);
+              this.teamService.updateFromLocalForage(data);
+            }
           }
         }
-        //setTimeout(() => this.refresh(), 100);
+        setTimeout(() => this.refresh(), 100);
       }
     );
   }

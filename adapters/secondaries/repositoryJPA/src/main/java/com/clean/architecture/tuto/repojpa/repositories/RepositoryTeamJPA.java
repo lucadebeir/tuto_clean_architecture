@@ -117,6 +117,11 @@ public class RepositoryTeamJPA extends AbstractRepositoryJPA implements Reposito
     }
 
     @Override
+    public boolean existsByNameForUpdate(Team team) throws UnknownHostException, SQLException {
+        return false;
+    }
+
+    @Override
     public void deleteByUuid(String uuid) {
 
     }

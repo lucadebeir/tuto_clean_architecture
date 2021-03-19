@@ -82,8 +82,14 @@ public class RepositoryTeamSQL extends AbstractRepositorySQL implements Reposito
         preparedStatement.setString(1, person.getUuid());
         preparedStatement.setString(2, team.getUuid());
         preparedStatement.executeUpdate();
+    }
 
-        connection.createStatement();
+    public void deleteBePartOf(Team team) throws SQLException {
+        String SQL_DELETE = "DELETE FROM bepartof WHERE uuidTeam = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_DELETE);
+        preparedStatement.setString(1, team.getUuid());
+        preparedStatement.executeUpdate();
     }
 
     @Override
@@ -135,13 +141,47 @@ public class RepositoryTeamSQL extends AbstractRepositorySQL implements Reposito
     }
 
     @Override
-    public void deleteByUuid(String uuid) {
+    public boolean existsByNameForUpdate(Team team) throws SQLException {
+        List<String> allTeamName = new ArrayList<>();
+        Statement stmt = connection.createStatement();
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT name FROM team WHERE uuid != ?");
+        preparedStatement.setString(1, team.getUuid());
+        ResultSet rs = preparedStatement.executeQuery();
 
+        while (rs.next()) {
+            allTeamName.add(rs.getString(1));
+        }
+        return allTeamName.contains(team.getName());
+    }
+
+    @Override
+    public void deleteByUuid(String uuid) throws SQLException {
+        String SQL_DELETE_PERSON = "DELETE FROM team WHERE uuid = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_DELETE_PERSON);
+        preparedStatement.setString(1, uuid);
+
+        preparedStatement.execute();
+        preparedStatement.close();
     }
 
     @Override
     public Team update(Team team) throws UnknownHostException, SQLException {
-        return null;
+        String SQL_UPDATE_PERSON = "UPDATE team SET name = ? WHERE uuid = ?";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(SQL_UPDATE_PERSON);
+        preparedStatement.setString(1, team.getName());
+        preparedStatement.setString(2, team.getUuid());
+
+        preparedStatement.executeUpdate();
+
+        deleteBePartOf(team);
+
+        for (Person person : team.getList()) {
+            bePartOf(person, team);
+        }
+
+        return team;
     }
 
     public List<Person> getPersonBePartOfTeam(Team team) throws SQLException {
@@ -154,8 +194,8 @@ public class RepositoryTeamSQL extends AbstractRepositorySQL implements Reposito
         ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()) {
             list.add(Person.builder().uuid(rs.getString(1))
-                    .firstName(rs.getString(2))
-                    .lastName(rs.getString(3))
+                    .lastName(rs.getString(2))
+                    .firstName(rs.getString(3))
                     .age(rs.getInt(4))
                     .build());
         }

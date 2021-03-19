@@ -2,9 +2,7 @@ package com.clean.architecture.tuto.rest.config;
 
 import com.clean.architecture.tuto.core.ports.equipe.RepositoryTeam;
 import com.clean.architecture.tuto.core.ports.personne.RepositoryPerson;
-import com.clean.architecture.tuto.core.use.cases.equipe.CreateTeamUseCase;
-import com.clean.architecture.tuto.core.use.cases.equipe.DisplayDetailsTeamUseCase;
-import com.clean.architecture.tuto.core.use.cases.equipe.GetAllTeamUseCase;
+import com.clean.architecture.tuto.core.use.cases.equipe.*;
 import com.clean.architecture.tuto.core.use.cases.personne.*;
 import com.clean.architecture.tuto.repojpa.repositories.RepositoryPersonJPA;
 import com.clean.architecture.tuto.repojpa.repositories.RepositoryTeamJPA;
@@ -68,6 +66,16 @@ public class UsesCasesCfg {
     @Bean
     public GetAllTeamUseCase getAllTeamUseCase(RepositoryTeam repositoryTeam) {
         return new GetAllTeamUseCase(repositoryTeam);
+    }
+
+    @Bean
+    public DeleteTeamUseCase deleteTeamUseCase(RepositoryTeam repositoryTeam) {
+        return new DeleteTeamUseCase(repositoryTeam);
+    }
+
+    @Bean
+    public UpdateTeamUseCase updateTeamUseCase(RepositoryTeam repositoryTeam) {
+        return new UpdateTeamUseCase(repositoryTeam);
     }
 
 }

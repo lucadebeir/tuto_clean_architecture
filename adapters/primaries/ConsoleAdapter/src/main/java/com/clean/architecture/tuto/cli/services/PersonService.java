@@ -59,7 +59,7 @@ public class PersonService {
             // TODO : GuiUtils.displayTitle("AFFICHAGE DES DETAILS D'UNE PERSONNE");
             System.out.println("Uuid : ");
             String uuid = in.nextLine();
-            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(Utils.getByteArrayFromGuid(uuid));
+            Optional<Person> optionalPerson = Config.findByIdPersonUseCase().execute(uuid);
             optionalPerson.ifPresent(person -> System.out.println(person.getFirstName() + " " + person.getLastName() + " a " + person.getAge() + "ans"));
         } catch (BusinessException e) {
             System.err.println(String.join(System.lineSeparator(), e.getErrorsList()));

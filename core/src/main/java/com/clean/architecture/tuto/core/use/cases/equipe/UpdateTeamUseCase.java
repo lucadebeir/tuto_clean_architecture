@@ -43,7 +43,7 @@ public class UpdateTeamUseCase {
                 testStringMandatory(errorsList, team.getName(), "nom", 20, 2);
 
                 try {
-                    if(StringUtils.isNotEmpty(team.getName()) && this.repository.existsByName(team.getName())) {
+                    if(StringUtils.isNotEmpty(team.getName()) && this.repository.existsByNameForUpdate(team)) {
                         errorsList.add("Une équipe portant ce nom existe déjà");
                     }
                 } catch (UnknownHostException | SQLException e) {

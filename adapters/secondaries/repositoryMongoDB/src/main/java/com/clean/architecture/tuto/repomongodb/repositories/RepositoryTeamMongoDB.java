@@ -121,6 +121,11 @@ public class RepositoryTeamMongoDB extends AbstractRepositoryMongoDB implements 
     }
 
     @Override
+    public boolean existsByNameForUpdate(Team team) throws UnknownHostException, SQLException {
+        return false;
+    }
+
+    @Override
     public void deleteByUuid(String uuid) {
 
     }

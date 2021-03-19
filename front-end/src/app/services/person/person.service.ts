@@ -53,7 +53,6 @@ export class PersonService {
 
   //update a person online
   update(person: Person): Observable<Person> {
-    console.log(person)
     return this.http
       .post<ResponseApi<Person>>('http://localhost:8080/api/person/update', person)
       .pipe(map(this.mapper.mapFrom));
@@ -92,7 +91,6 @@ export class PersonService {
           }
         })
       });
-      console.log(person)
       return person;
     } catch (err) {
       console.log(err);

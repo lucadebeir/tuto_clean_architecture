@@ -1,0 +1,5 @@
+com\clean\architecture\tuto\reposql\repositories\RepositoryPersonSQL.class
+com\clean\architecture\tuto\reposql\config\Config$SingletonSQL.class
+com\clean\architecture\tuto\reposql\repositories\RepositoryTeamSQL.class
+com\clean\architecture\tuto\reposql\repositories\AbstractRepositorySQL.class
+com\clean\architecture\tuto\reposql\config\Config.class

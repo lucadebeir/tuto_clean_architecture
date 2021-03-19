@@ -19,7 +19,9 @@ public interface RepositoryTeam {
 
     boolean existsByName(String name) throws UnknownHostException, SQLException;
 
-    void deleteByUuid(String uuid);
+    boolean existsByNameForUpdate(Team team) throws UnknownHostException, SQLException;
+
+    void deleteByUuid(String uuid) throws SQLException;
 
     Team update(Team team) throws UnknownHostException, SQLException;
 }

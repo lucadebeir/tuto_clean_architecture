@@ -2,6 +2,7 @@ package com.clean.architecture.tuto.core.use.cases.equipe;
 
 import com.clean.architecture.tuto.core.exceptions.BusinessException;
 import com.clean.architecture.tuto.core.exceptions.TechnicalException;
+import com.clean.architecture.tuto.core.models.DeleteInformations;
 import com.clean.architecture.tuto.core.ports.equipe.RepositoryTeam;
 import com.clean.architecture.tuto.core.utils.Utils;
 import lombok.AllArgsConstructor;
@@ -19,9 +20,12 @@ public class DeleteTeamUseCase {
 
     private RepositoryTeam repository;
 
-    public void execute(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+    public DeleteInformations execute(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
+        DeleteInformations result = new DeleteInformations();
         isDeletable(uuid);
         repository.deleteByUuid(uuid);
+        result.addUuidDeleted(uuid);
+        return result;
     }
 
     private void isDeletable(String uuid) throws BusinessException, TechnicalException, SQLException, UnknownHostException {
