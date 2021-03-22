@@ -7,7 +7,6 @@ import {Team} from "../../models/team.model";
 import {ResponseApiWrapper} from "../../configurations/mapper/response-api-wrapper";
 import {map} from "rxjs/operators";
 import {ResponseApi} from "../../models/response-api.model";
-import {Person} from "../../models/person.model";
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable({
@@ -30,7 +29,7 @@ export class TeamService {
   //find all team online
   public getAllTeams(): Observable<Team[]> {
     return this.http
-      .get("http://localhost:8080/api/team/all")
+      .get("http://172.16.34.227:8080/api/team/all")
       .pipe(map( (value: ResponseApi<Team[]>) => {
         localforage.setItem('teams', value.result);
         return this.mapper.mapFrom(value);
@@ -40,7 +39,7 @@ export class TeamService {
   //find team by uuid online
   getTeamByUuid(uuid: string): Observable<Team> {
     return this.http
-      .get<ResponseApi<Team>>('http://localhost:8080/api/team/' + uuid)
+      .get<ResponseApi<Team>>('http://172.16.34.227:8080/api/team/' + uuid)
       .pipe(map(this.mapper.mapFrom));
   }
 
@@ -48,20 +47,20 @@ export class TeamService {
   create(team: Team): Observable<Team> {
     team.uuid === undefined ? team.uuid = uuidv4() : null;
     return this.http
-      .post<ResponseApi<Team>>('http://localhost:8080/api/team/add', team)
+      .post<ResponseApi<Team>>('http://172.16.34.227:8080/api/team/add', team)
       .pipe(map(this.mapper.mapFrom));
   }
 
   //update a team online
   update(team: Team): Observable<Team> {
     return this.http
-      .post<ResponseApi<Team>>('http://localhost:8080/api/team/update', team)
+      .post<ResponseApi<Team>>('http://172.16.34.227:8080/api/team/update', team)
       .pipe(map(this.mapper.mapFrom));
   }
 
   //delete a team online
   delete(uuid: string): void {
-    this.http.delete('http://localhost:8080/api/team/' + uuid).subscribe();
+    this.http.delete('http://172.16.34.227:8080/api/team/' + uuid).subscribe();
   }
 
   // OFFLINE/ONLINE
@@ -156,9 +155,9 @@ export class TeamService {
         this.create(item).subscribe();
       } else {
         this.getTeamByUuid(item.uuid).subscribe((data: Team) => {
-            if(JSON.stringify(item) !== JSON.stringify(data)) {
-              this.update(item).subscribe();
-            }
+          if(JSON.stringify(item) !== JSON.stringify(data)) {
+            this.update(item).subscribe();
+          }
           },
           () => {
             this.create(item).subscribe();

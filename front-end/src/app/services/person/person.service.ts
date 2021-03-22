@@ -29,7 +29,7 @@ export class PersonService {
   //find all person online
   getAllPersons(): Observable<Person[]> {
     return this.http
-      .get<ResponseApi<Person[]>>('http://localhost:8080/api/person/all')
+      .get<ResponseApi<Person[]>>('http://172.16.34.227:8080/api/person/all')
       .pipe(map( (value: ResponseApi<Person[]>) => {
         localforage.setItem('persons', value.result);
         return this.mapper.mapFrom(value);
@@ -39,7 +39,7 @@ export class PersonService {
   //find person by uuid online
   getPersonByUuid(uuid: string): Observable<Person> {
     return this.http
-      .get<ResponseApi<Person>>('http://localhost:8080/api/person/' + uuid)
+      .get<ResponseApi<Person>>('http://172.16.34.227:8080/api/person/' + uuid)
       .pipe(map(this.mapper.mapFrom));
   }
 
@@ -47,20 +47,20 @@ export class PersonService {
   create(person: Person): Observable<Person> {
     person.uuid === undefined ? person.uuid = uuidv4() : null;
     return this.http
-      .post<ResponseApi<Person>>('http://localhost:8080/api/person/add', person)
+      .post<ResponseApi<Person>>('http://172.16.34.227:8080/api/person/add', person)
       .pipe(map(this.mapper.mapFrom));
   }
 
   //update a person online
   update(person: Person): Observable<Person> {
     return this.http
-      .post<ResponseApi<Person>>('http://localhost:8080/api/person/update', person)
+      .post<ResponseApi<Person>>('http://172.16.34.227:8080/api/person/update', person)
       .pipe(map(this.mapper.mapFrom));
   }
 
   //delete a person online
   delete(uuid: string): void {
-    this.http.delete('http://localhost:8080/api/person/' + uuid).subscribe();
+    this.http.delete('http://172.16.34.227:8080/api/person/' + uuid).subscribe();
   }
 
   // OFFLINE/ONLINE
